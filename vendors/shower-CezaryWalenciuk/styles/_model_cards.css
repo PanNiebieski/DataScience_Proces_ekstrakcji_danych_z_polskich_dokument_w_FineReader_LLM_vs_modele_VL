@@ -1,0 +1,603 @@
+/* =================================================================
+   _model-cards.css  v2
+   Karty modeli — Benchmark OCR/VL 2026
+   2 slajdy na model: [tech] + [context]
+   Dodaj do main.css: @import "_model-cards.css";
+   ================================================================= */
+
+/* ----------------------------------------------------------------
+   Shared: slide base
+   ---------------------------------------------------------------- */
+
+.slide.model-card {
+  --mc-header-h: 76px;
+  --mc-pad-x: 52px;
+  --mc-pad-inner: 28px;
+
+  display: grid;
+  grid-template-rows: var(--mc-header-h) 1fr;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------------------------
+   Header strip (shared)
+   ---------------------------------------------------------------- */
+
+.mc-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 var(--mc-pad-x);
+  background: linear-gradient(
+    100deg,
+    rgba(61, 132, 255, 0.10) 0%,
+    rgba(74, 29, 181, 0.07) 60%,
+    rgba(90, 52, 112, 0.04) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mc-title {
+  flex: 1;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  letter-spacing: -0.015em;
+  color: var(--c-light, #ffffff);
+  line-height: 1 !important;
+}
+
+.mc-date {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.33);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Slide pair indicator: ●○ / ○● */
+.mc-pair {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mc-pair-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mc-pair-dot.is-active {
+  background: var(--tag-darkblue, #0E65FF);
+  border-color: transparent;
+}
+
+/* Context slide: teal accent on active dot */
+.model-card--context .mc-pair-dot.is-active {
+  background: #14b8a6;
+}
+
+/* ----------------------------------------------------------------
+   Category badges (shared)
+   ---------------------------------------------------------------- */
+
+.mc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: 20px;
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mc-badge--classic  { background: rgba(107,114,128,.18); color: #9ca3af; border: 1px solid rgba(107,114,128,.3); }
+.mc-badge--ocr-vlm  { background: rgba(14,101,255,.17);  color: #7ab4ff; border: 1px solid rgba(14,101,255,.36); }
+.mc-badge--vlm      { background: rgba(46,26,71,.55);    color: #c4b5fd; border: 1px solid rgba(139,92,246,.36); }
+.mc-badge--grounding{ background: rgba(20,184,166,.13);  color: #2dd4bf; border: 1px solid rgba(20,184,166,.3);  }
+
+/* ----------------------------------------------------------------
+   SLIDE A — Technical (default)
+   ---------------------------------------------------------------- */
+
+.slide.model-card:not(.model-card--context) .mc-body {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Left column */
+.mc-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px var(--mc-pad-inner) 22px var(--mc-pad-x);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.mc-desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.mc-desc strong { color: #fff; font-weight: 600; }
+
+.mc-genesis {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.46);
+  border-left: 2px solid rgba(61, 132, 255, 0.42);
+  padding-left: 11px;
+  margin: 0;
+}
+
+/* Info / warn callouts */
+.mc-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.mc-callout strong { font-weight: 700; }
+
+.mc-callout--warn {
+  background: rgba(251,191,36,.08);
+  border: 1px solid rgba(251,191,36,.22);
+  color: rgba(251,191,36,.86);
+}
+
+.mc-callout--info {
+  background: rgba(99,102,241,.09);
+  border: 1px solid rgba(99,102,241,.22);
+  color: rgba(165,180,252,.86);
+}
+
+.mc-callout--star {
+  background: rgba(20,184,166,.09);
+  border: 1px solid rgba(20,184,166,.26);
+  color: rgba(45,212,191,.88);
+}
+
+.mc-callout--star::before { content: "★ "; flex-shrink: 0; }
+
+/* Right column */
+.mc-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px var(--mc-pad-x) 22px var(--mc-pad-inner);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Meta key/value table */
+.mc-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px 14px;
+  margin: 0;
+  align-content: start;
+}
+
+.mc-meta dt {
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,.28);
+  align-self: center;
+  white-space: nowrap;
+}
+
+.mc-meta dd {
+  font-size: 0.79rem;
+  color: rgba(255,255,255,.78);
+  margin: 0;
+}
+
+.mc-meta dd code {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  background: rgba(255,255,255,.08);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* Benchmark section */
+.mc-bench {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding-top: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.mc-bench > h3 {
+  font-size: 0.62rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(255,255,255,.26) !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  background: none !important;
+  font-weight: 600 !important;
+}
+
+.mc-bench-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.mc-bench-name {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,.5);
+  flex: 1;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.mc-bench-score {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  color: rgba(255,255,255,.88);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mc-bench-score.s-top  { color: #4ade80; }
+.mc-bench-score.s-high { color: #86efac; }
+.mc-bench-score.s-mid  { color: #fbbf24; }
+.mc-bench-score.s-low  { color: rgba(255,255,255,.42); }
+.mc-bench-score.s-none {
+  color: rgba(255,255,255,.26);
+  font-size: 0.76rem;
+  font-weight: 400;
+  font-family: inherit;
+  font-style: italic;
+}
+
+.mc-bench-note {
+  font-size: 0.69rem;
+  color: rgba(255,255,255,.28);
+  font-style: italic;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+/* ----------------------------------------------------------------
+   SLIDE B — Context (experiment / deployment / failures)
+   ---------------------------------------------------------------- */
+
+.slide.model-card--context .mc-body {
+  display: grid;
+  grid-template-columns: 54% 46%;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Shared section block used in context slides */
+.mc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mc-section-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,.28);
+  font-weight: 600;
+  margin: 0;
+}
+
+.mc-section-body {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.76);
+  margin: 0;
+}
+
+.mc-section-body strong { color: #fff; font-weight: 600; }
+
+/* Context left column */
+.mc-ctx-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px var(--mc-pad-inner) 22px var(--mc-pad-x);
+  border-right: 1px solid rgba(255,255,255,.06);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Context right column */
+.mc-ctx-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px var(--mc-pad-x) 22px var(--mc-pad-inner);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Deployability cost pill */
+.mc-cost-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+
+.mc-cost-pill::before { content: "▸"; }
+
+.mc-cost--low  { background: rgba(74,222,128,.14);  color: #4ade80; border: 1px solid rgba(74,222,128,.28); }
+.mc-cost--mid  { background: rgba(251,191,36,.13);  color: #fbbf24; border: 1px solid rgba(251,191,36,.25); }
+.mc-cost--high { background: rgba(248,113,113,.13); color: #f87171; border: 1px solid rgba(248,113,113,.25); }
+
+/* Failure modes list */
+.mc-failures {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mc-failures-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mc-failures-list li {
+  font-size: 0.76rem;
+  line-height: 1.42;
+  color: rgba(251,191,36,.76);
+  padding: 5px 9px 5px 24px;
+  position: relative;
+  background: rgba(251,191,36,.04);
+  border-radius: 4px;
+  border-left: 2px solid rgba(251,191,36,.2);
+}
+
+.mc-failures-list li::before {
+  content: "→";
+  position: absolute;
+  left: 7px;
+  color: rgba(251,191,36,.45);
+  font-size: 0.7rem;
+}
+
+/* ----------------------------------------------------------------
+   SLIDE: Model overview / taxonomy table
+   ---------------------------------------------------------------- */
+
+.slide.model-overview {
+  --mo-pad-x: 52px;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.mo-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 26px var(--mo-pad-x) 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(
+    100deg,
+    rgba(61,132,255,.10) 0%,
+    rgba(74,29,181,.07) 60%,
+    rgba(90,52,112,.04) 100%
+  );
+}
+
+.mo-header h2 {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--c-light, #fff) !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em;
+}
+
+.mo-header-sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,.35);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.mo-body {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--mo-pad-x);
+}
+
+.mo-table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  row-gap: 10px;
+  column-gap: 40px;
+}
+
+.mo-label {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  justify-self: start;
+}
+
+/* Category label color variants */
+.mo-label--specialist  { background: rgba(14,101,255,.17);  color: #7ab4ff; border: 1px solid rgba(14,101,255,.34); }
+.mo-label--multilang   { background: rgba(20,184,166,.13);  color: #2dd4bf; border: 1px solid rgba(20,184,166,.28); }
+.mo-label--grounding   { background: rgba(99,102,241,.14);  color: #a5b4fc; border: 1px solid rgba(99,102,241,.3);  }
+.mo-label--vlm         { background: rgba(46,26,71,.55);    color: #c4b5fd; border: 1px solid rgba(139,92,246,.34); }
+.mo-label--expensive   { background: rgba(248,113,113,.12); color: #f87171; border: 1px solid rgba(248,113,113,.25);}
+.mo-label--local       { background: rgba(74,222,128,.12);  color: #4ade80; border: 1px solid rgba(74,222,128,.26); }
+
+.mo-models {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-self: center;
+}
+
+.mo-model-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 0.77rem;
+  font-weight: 500;
+  background: rgba(255,255,255,.07);
+  color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.1);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: -0.01em;
+}
+
+/* Highlight a model tag that is unique/notable in its row */
+.mo-model-tag--star {
+  background: rgba(255,255,255,.11);
+  color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.2);
+}
+
+/* Divider line between groups */
+.mo-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: rgba(255,255,255,.06);
+  margin: 4px 0;
+}
+/* ----------------------------------------------------------------
+   SLIDE C — Rationale (dlaczego / hipoteza / ryzyko)
+   3. slajd w trójce modelu; active dot = violet
+   ---------------------------------------------------------------- */
+
+.slide.model-card--rationale .mc-pair-dot.is-active {
+  background: #a78bfa;
+}
+
+.slide.model-card--rationale .mc-body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 24px var(--mc-pad-x);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* "Dlaczego testujemy" — full-width top block */
+.mr-why {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.mr-why-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,.80);
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(61,132,255,.5);
+}
+
+/* Bottom two-column: hypothesis | risk */
+.mr-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Hypothesis — blue positive tone */
+.mr-hypothesis {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mr-hypothesis-text {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: rgba(165,212,255,.82);
+  margin: 0;
+  padding: 12px 16px;
+  background: rgba(14,101,255,.07);
+  border: 1px solid rgba(14,101,255,.18);
+  border-radius: 6px;
+  flex: 1;
+}
+
+/* Risk — amber warning tone */
+.mr-risk {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mr-risk-text {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: rgba(251,191,36,.84);
+  margin: 0;
+  padding: 12px 16px;
+  background: rgba(251,191,36,.06);
+  border: 1px solid rgba(251,191,36,.18);
+  border-radius: 6px;
+  flex: 1;
+}
