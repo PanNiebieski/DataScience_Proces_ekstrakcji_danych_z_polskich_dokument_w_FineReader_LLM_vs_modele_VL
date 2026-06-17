@@ -68,53 +68,86 @@
            Dlaczego robię tę prezentację?
         </span></span>
     </section>
-        <section class="slide theme-dark tag-darkpurple  decor-corners2">
-        <span class="shout colors"><span>
-           Moja przygota z SpaCy
-        </span></span>
+              <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/1.png" alt="screenshot" />
+        </figure>
+    </section>
+                  <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/2.png" alt="screenshot" />
+        </figure>
     </section>
 
-
-        <!-- //Ilustracja z dwoma ścieżkami ekstrakcji danych z dokumentów: OCR + LLM vs modele VL -->
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/3.png" alt="screenshot" />
+        </figure>
+    </section>
+                  <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/4.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           To co jest lepsze?
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           To co jest szybsze?
+        </span></span>
+    </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
            Która ścieżka jest lepsza i kiedy?
         </span></span>
     </section>
-
-    <section class="slide theme-dark tag-darkblue fullscreen">
-        <div class="layout-splitpoint">
-            <div class="split-image">
-                <img title="icon" src="pictures/icons/02.png" />
-            </div>
-            <div class="split-text">
-                <ol class="nonumbers">
-                    <li class="bold2">Jakie są wyzwania z ekstrakcją dokumentów</li>
-                    <ol class="nonumbers">
-                        <li class="next">Nie używamy chmury czyli robimy to On-Premise</li>
-                        <li class="next">Rozwiązania na licencji MIT, Apache 2.0, CC-By-BY</li>
-                        <li class="next">Obsługa języka polskiego</li>
-                        <li class="next">Koszty tylko czysto serwerowe</li>
-                        <li class="next">Nie będziemy tworzyć własnych modeli</li>
-                    </ol>
-                </ol>
-            </div>
-        </div>
-    </section> 
-        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/5.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/slides/6.png" alt="screenshot" />
+        </figure>
+    </section>
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Jaka jest róźnica między OCR, a VL?
+           Przed dyskusją zapoznaj się z jakością skanów
         </span></span>
     </section>
-  
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Czy to jest ten moment dla modeli OCR/VL?
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Pora wskoczyć w ten świat modeli OCR/VL
+        </span></span>
+    </section>
+
     <section class="slide layout-callout theme-dark">
         <div class="callout-box">
-            <p>Przy okazji spojrzeć też na inne modele które są mieszanką OCR/VL do procesu ekstrakcji tekstu
+            <p>Przy okazji chciałem sp też na inne modele które są mieszanką OCR/VL do procesu ekstrakcji tekstu
             <br/>Także z mapą/boxingiem dokumentu w formacie XML</p>
             <br/>
             <p>bo może są modele które są lepsze w OCR-owaniu niż ABBY FineReader</p>
         </div>
     </section>
+
+
+
+
+
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Jaka jest róźnica między OCR, a VL?
+        </span></span>
+    </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
@@ -122,7 +155,49 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Jakie są wyzwania z ekstrakcją dokumentów</li>
+                    <li class="bold2">OCR</li>
+                    <ol class="nonumbers">
+                        <li class="next">OCR to model/pipeline, którego głównym zadaniem jest odczytać tekst z obrazu dokumentu.</li>
+                        <li class="next">Dobry OCR może też zwracać pozycje tekstu, bloki, tabele, czasem strukturę strony.  </li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/icons/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">VL / VLM to Vision-Language Model, czyli model obraz + język</li>
+                    <ol class="nonumbers">
+                        <li class="next">On nie tylko czyta tekst, ale też "rozumie" obraz jako całość i reaguje na prompt</li>
+                        <li class="next">Czyli: "odczytaj tekst", ale też "zrób Markdown", "wyciągnij dane z faktury", "opisz tabelę", "znajdź podpis", "zmapuj pola do JSON".</li>
+                    </ol>
+                </ol>
+            </div>
+        </div>
+    </section>  
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Większąść modeli jest hybrydą OCR i VL
+        </span></span>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           To jakie mamy kryteria wyboru modeli do ekstrakcji dokumentów
+        </span></span>
+    </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/icons/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                    <li class="bold2">Kryteria</li>
                     <ol class="nonumbers">
                         <li class="next">Nie używamy chmury czyli robimy to On-Premise</li>
                         <li class="next">Rozwiązania na licencji MIT, Apache 2.0, CC-By-BY</li>
@@ -134,17 +209,188 @@
             </div>
         </div>
     </section>    
+
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
            To jakie modele spełniają te warunki w 2026 roku?
         </span></span>
     </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/icons/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+             
+                        <li class="next">Qwen3-VL</li>
+                        <li class="next">DeepSeek-OCR 2</li>
+                        <li class="next">HunyuanOCR</li>
+                        <li class="next">Qianfan-OCR</li>
+                        <li class="next">GLM-OCR</li>
+                        <li class="next">GutenOCR</li>
+                        <li class="next">NuMarkdown-8B-Thinking</li>
+               
+                </ol>
+            </div>
+        </div>
+    </section>
+        <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/icons/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                  
+           
+                        <li class="next">PaddleOCR-VL</li>
+                        <li class="next">FireRedOCR</li>
+                        <li class="next">dotsOCR / dotsmOCR</li>
+                  
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+           Ups jeden z tych modeli jest na licencji komercyjnej
+        </span></span>
+    </section>
+
+<section class="slide layout-comparison-table theme-dark">
+
+
+  <table class="ct-table ct-table--wide">
+    <thead>
+      <tr>
+        <th style="width:170px">Model</th>
+        <th style="width:140px">Min. / zalecana VRAM</th>
+        <th>Co potrafi</th>
+        <th style="width:110px">Licencja</th>
+        <th style="width:160px">W rankingach</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="dt-badge">GLM-OCR 0.9B</code></td>
+        <td>6 GB / 8 GB</td>
+        <td>OCR, layout, tabele, formuły, JSON schema, Markdown</td>
+        <td><code class="dt-badge dt-badge--green">MIT</code></td>
+        <td>Tak, OmniDocBench / HF evals</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">HunyuanOCR 1B</code></td>
+        <td>6 GB / 8 GB</td>
+        <td>OCR, bbox/spotting, parsing dokumentów, JSON, Markdown/HTML/LaTeX przez prompt</td>
+        <td><code class="dt-badge dt-badge--gray">Other / Tencent</code></td>
+        <td>Tak, OCR/document benchmarks</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">PaddleOCR-VL-1.6</code></td>
+        <td>8 GB / 12 GB</td>
+        <td>OCR, layout, tabele, formuły, wykresy, JSON, Markdown</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, bardzo mocno w document parsing</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">DeepSeek-OCR 2 3B</code></td>
+        <td>12 GB / 16 GB</td>
+        <td>OCR, konwersja dokumentu do Markdown, promptowane tryby OCR; bez jawnych bbox/layout w output</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, często jako baseline</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">GutenOCR-3B</code></td>
+        <td>12 GB / 16 GB</td>
+        <td>OCR, bbox, lokalne czytanie regionów, JSON, Markdown</td>
+        <td><code class="dt-badge dt-badge--red">CC-BY-NC-4.0</code></td>
+        <td>Raczej niszowo / lokalne testy</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">Qianfan-OCR</code></td>
+        <td>12 GB / 16 GB</td>
+        <td>OCR, bbox/layout, JSON/HTML, KIE, Markdown</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, OCR/document benchmarks</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">dots.ocr</code></td>
+        <td>12 GB / 16 GB</td>
+        <td>OCR, bbox, layout JSON, tabele HTML, formuły LaTeX, Markdown</td>
+        <td><code class="dt-badge dt-badge--green">MIT</code></td>
+        <td>Tak, OmniDocBench</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">FireRed-OCR</code></td>
+        <td>12 GB / 16 GB</td>
+        <td>OCR, spatial grounding, region recognition, layout-to-Markdown, prompt</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, OmniDocBench / FireRedBench</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">Qwen3-VL-8B-Instruct</code></td>
+        <td>16 GB / 24 GB</td>
+        <td>OCR, grounding 2D, prompt, Markdown/JSON/XML promptowo</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, VLM/OCR benchmarki</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">dots.mocr</code></td>
+        <td>16 GB / 24 GB</td>
+        <td>OCR, bbox, layout JSON, Markdown, wizualizacja layoutu</td>
+        <td><code class="dt-badge dt-badge--green">MIT</code></td>
+        <td>Tak, olmOCR / OmniDocBench</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">NuMarkdown-8B-Thinking</code></td>
+        <td>16 GB / 24 GB</td>
+        <td>OCR, analiza układu, tabele, czysty Markdown; JSON/XML raczej promptowo</td>
+        <td><code class="dt-badge dt-badge--green">MIT</code></td>
+        <td>Tak, Markdown/document arena</td>
+      </tr>
+      <tr>
+        <td><code class="dt-badge">Qwen3-VL-30B-A3B</code></td>
+        <td>48 GB / 80 GB, RunPod</td>
+        <td>OCR, grounding 2D, długie dokumenty, Markdown/JSON/XML promptowo</td>
+        <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
+        <td>Tak, VLM/OCR benchmarki</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
     <!-- //Tutaj tabeleka z modelami i ich cechami -->
-            <section class="slide theme-dark tag-darkpurple  decor-corners2">
+    <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
            Jakie scenariuszę chcemy przetestować?
         </span></span>
     </section>
+    <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/icons/02.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+
+                        <li class="next">Czy umie odczytać poprawnie tekst</li>
+                        <li class="next">Czy konwerują informacje na słownik json klucz/wartość</li>
+                        <li class="next">Czy rozumiją sens języka polskiego</li>
+                        <li class="next">Czy umie czytać mapy</li>
+                        <li class="next">Czy rozumieją checboxy</li>
+                        <li class="next">Czy mogą stwierdzić czy na dokumencie jest pieczątka</li>
+                        <li class="next">czy potrafią określić, że dokument B jest tego samego typu do dokument A</li>
+                           <li class="next">Radzą sobie z przechyloną stroną o 10 lub 90 stopni</li>
+                                <li class="next">Czy radzą sobie z rozmytym obrazem ze słabym kontrastem</li>
+                </ol>
+            </div>
+        </div>
+    </section>    
+
+
+
         <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
            Jakie dokumenty będziemy testować?
@@ -206,7 +452,7 @@
       </tr>
       <tr>
         <td><strong>Kluczowa cecha</strong></td>
-        <td>„Visual Causal Flow" — model odwzorowuje wzrokową kolejność przyczynową dokumentu przed generowaniem tekstu</td>
+        <td>"Visual Causal Flow" — model odwzorowuje wzrokową kolejność przyczynową dokumentu przed generowaniem tekstu</td>
       </tr>
       <tr>
         <td><strong>Tryb uruchomienia</strong></td>
@@ -276,7 +522,7 @@
       </tr>
       <tr>
         <td>VRAM</td>
-        <td>Rzeczywiste ~7–8 GB BF16 mimo „3B aktywnych" w nazwie</td>
+        <td>Rzeczywiste ~7–8 GB BF16 mimo "3B aktywnych" w nazwie</td>
       </tr>
     </tbody>
   </table>
@@ -502,7 +748,7 @@
       </tr>
       <tr>
         <td><strong>Tryby</strong></td>
-        <td>Pełnostronicowe czytanie · detekcja z bbox · zapytania lokalizacyjne „where is X?"</td>
+        <td>Pełnostronicowe czytanie · detekcja z bbox · zapytania lokalizacyjne "where is X?"</td>
       </tr>
       <tr>
         <td><strong>Tryb uruchomienia</strong></td>
@@ -974,11 +1220,11 @@
       </tr>
       <tr>
         <td><strong>Geneza</strong></td>
-        <td>FireRed Team (Chiny) · znany z audio/TTS · pipeline syntezy „Geometry + Semantics Data Factory"</td>
+        <td>FireRed Team (Chiny) · znany z audio/TTS · pipeline syntezy "Geometry + Semantics Data Factory"</td>
       </tr>
       <tr>
         <td><strong>Kluczowa cecha</strong></td>
-        <td>Eliminuje „structural hallucination" przez wymuszenie syntaktycznej poprawności struktury jako kryterium nagrody w RL</td>
+        <td>Eliminuje "structural hallucination" przez wymuszenie syntaktycznej poprawności struktury jako kryterium nagrody w RL</td>
       </tr>
       <tr>
         <td><strong>Tryb uruchomienia</strong></td>
@@ -1166,7 +1412,7 @@
       </tr>
       <tr>
         <td><strong>Kluczowa cecha</strong></td>
-        <td>Nacisk na ustrukturyzowany Markdown zachowujący sekcje, nagłówki, listy, tabele i logiczną kolejność bloków · tryb „Thinking" przed wynikiem</td>
+        <td>Nacisk na ustrukturyzowany Markdown zachowujący sekcje, nagłówki, listy, tabele i logiczną kolejność bloków · tryb "Thinking" przed wynikiem</td>
       </tr>
       <tr>
         <td><strong>Tryb uruchomienia</strong></td>
@@ -2022,7 +2268,7 @@
       </tr>
       <tr>
         <td><code class="dt-badge">VLM</code></td>
-        <td>Model, który nie tylko czyta tekst, ale też „patrzy" na obraz: widzi układ strony, checkboxy, pieczątki, tabele, mapy i relacje przestrzenne.</td>
+        <td>Model, który nie tylko czyta tekst, ale też "patrzy" na obraz: widzi układ strony, checkboxy, pieczątki, tabele, mapy i relacje przestrzenne.</td>
       </tr>
       <tr>
         <td><code class="dt-badge">CER</code></td>
@@ -2150,7 +2396,7 @@
       <tr>
         <td><strong>Słabość</strong></td>
         <td>
-          Czasem nie domyka struktury JSON — „wie" co widzi, ale trzeba go pilnować formatowo.<br>
+          Czasem nie domyka struktury JSON — "wie" co widzi, ale trzeba go pilnować formatowo.<br>
           W lokalnym smoke teście Markdown conversion wypadł słabo — prawdopodobnie przez limit czasu lub niedopasowany prompt.
         </td>
       </tr>
@@ -2212,7 +2458,7 @@
       </tr>
       <tr>
         <td><strong>Słabość</strong></td>
-        <td>Gdy pytamy o decyzję np. „czy na stronie jest pieczątka?", zamiast odpowiedzieć po prostu przepisuje dokument. Zachowuje się jak bardzo pilny OCR, ale nie jak model decyzyjny.</td>
+        <td>Gdy pytamy o decyzję np. "czy na stronie jest pieczątka?", zamiast odpowiedzieć po prostu przepisuje dokument. Zachowuje się jak bardzo pilny OCR, ale nie jak model decyzyjny.</td>
       </tr>
       <tr>
         <td><strong>Jak o nim mówić</strong></td>
@@ -2238,7 +2484,7 @@
       </tr>
       <tr>
         <td><strong>Mocna strona</strong></td>
-        <td>Kandydat do kategorii „najlepszy stosunek jakości do kosztu". Szczególnie jeśli ma działać lokalnie albo tanio przetwarzać wiele dokumentów.</td>
+        <td>Kandydat do kategorii "najlepszy stosunek jakości do kosztu". Szczególnie jeśli ma działać lokalnie albo tanio przetwarzać wiele dokumentów.</td>
       </tr>
       <tr>
         <td><strong>Słabość</strong></td>
@@ -2392,7 +2638,7 @@
     <tbody>
       <tr>
         <td class="dt-col-mid"><strong>Szczególna rola</strong></td>
-        <td>Nie musi wygrać w zwykłym OCR. Jego sens: może zwracać <strong>lokalizację tekstu</strong> — mówi nie tylko „co odczytał", ale też „gdzie to było".</td>
+        <td>Nie musi wygrać w zwykłym OCR. Jego sens: może zwracać <strong>lokalizację tekstu</strong> — mówi nie tylko "co odczytał", ale też "gdzie to było".</td>
       </tr>
       <tr>
         <td><strong>Markdown conversion</strong></td>
@@ -2490,7 +2736,7 @@
       </tr>
       <tr>
         <td><code class="dt-badge">GutenOCR-3B</code></td>
-        <td>Lokalizacja i grounded OCR — gdzie ważne jest „gdzie", nie tylko „co"</td>
+        <td>Lokalizacja i grounded OCR — gdzie ważne jest "gdzie", nie tylko "co"</td>
       </tr>
       <tr>
         <td><code class="dt-badge">DeepSeek-OCR 2</code></td>

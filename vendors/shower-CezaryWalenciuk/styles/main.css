@@ -24,3 +24,6 @@
 @import url('./_front-page.css');
 @import url('./_utilities.css');
 @import url('./_model_cards.css');
+@import url('./_comparsion_table.css');
+@import url('./data_table.css');
+@import url('./callout.css');

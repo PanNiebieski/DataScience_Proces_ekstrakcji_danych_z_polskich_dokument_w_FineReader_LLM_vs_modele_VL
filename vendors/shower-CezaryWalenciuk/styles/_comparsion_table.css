@@ -1,0 +1,43 @@
+/* ==========================================================================
+   _comparison-table-wide.css — Dodatek do _comparison-table.css
+   
+   Wariant dla tabel z wieloma wierszami (8-15+) i wieloma kolumnami (4-5).
+   Mniejsza czcionka i węższe paddingi niż bazowy .ct-table,
+   żeby zmieścić więcej danych na jednym slajdzie bez przewijania.
+   
+   Użycie: dodaj klasę .ct-table--wide do <table class="ct-table">
+   
+   Wymaga: _comparison-table.css (dla .ct-table, .ct-header)
+           _data-table.css (dla code.dt-badge — opcjonalnie)
+   ========================================================================== */
+
+.slide.layout-comparison-table .ct-table.ct-table--wide {
+  font-size: 12px;
+  line-height: 1.35;
+  table-layout: fixed;
+  margin-top: -100px;
+}
+
+.slide.layout-comparison-table .ct-table.ct-table--wide thead th {
+  padding: 6px 10px 8px;
+  font-size: 12px;
+  color: var(--c-light, #e8e8e8);
+  border-bottom: 1.5px solid rgba(255,255,255,0.15);
+}
+
+.slide.layout-comparison-table .ct-table.ct-table--wide tbody td {
+  padding: 6px 10px;
+  color: var(--c-light-mid, #ccc);
+  vertical-align: top;
+}
+
+.slide.layout-comparison-table .ct-table.ct-table--wide tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Mniejszy badge w wąskiej tabeli */
+.slide.layout-comparison-table .ct-table.ct-table--wide code.dt-badge {
+  font-size: 10px;
+  padding: 1px 5px;
+  white-space: normal;
+}
