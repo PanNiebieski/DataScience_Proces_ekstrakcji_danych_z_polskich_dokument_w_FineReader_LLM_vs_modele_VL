@@ -22,102 +22,24 @@
     <link rel="stylesheet" href="vendors/prism/prism-my-dark.css" />
     <link rel="stylesheet" href="codegrid-dark.css" />
 
-    <style>
-        /*
-         * Automatyczne dopasowanie tabel do slajdu 16:9.
-         * Gęstość tabeli jest wykrywana przez liczbę wierszy w <tbody>.
-         */
-        .slide.layout-data-table,
-        .slide.layout-comparison-table {
-            --table-font-size: 15px;
-            --table-line-height: 1.3;
-            --table-cell-y: 8px;
-            --table-cell-x: 12px;
-            padding: 28px 36px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .slide.layout-data-table .dt-table,
-        .slide.layout-comparison-table .ct-table.ct-table--wide {
-            width: 100%;
-            margin: 0 !important;
-            font-size: var(--table-font-size) !important;
-            line-height: var(--table-line-height);
-            table-layout: fixed;
-        }
-
-        .slide.layout-data-table .dt-table thead th,
-        .slide.layout-data-table .dt-table tbody td,
-        .slide.layout-comparison-table .ct-table.ct-table--wide thead th,
-        .slide.layout-comparison-table .ct-table.ct-table--wide tbody td {
-            padding: var(--table-cell-y) var(--table-cell-x);
-            overflow-wrap: anywhere;
-            hyphens: auto;
-        }
-
-        .slide.layout-data-table .dt-table thead th,
-        .slide.layout-comparison-table .ct-table.ct-table--wide thead th {
-            font-size: 1em !important;
-            line-height: 1.15;
-        }
-
-        .slide.layout-data-table .dt-table code.dt-badge,
-        .slide.layout-comparison-table .ct-table.ct-table--wide code.dt-badge {
-            max-width: 100%;
-            padding: 1px 5px;
-            font-size: 0.88em;
-            line-height: 1.35;
-            white-space: normal;
-            overflow-wrap: anywhere;
-        }
-
-        /* Tabele zawierające co najmniej 7 wierszy. */
-        .slide.layout-data-table:has(tbody tr:nth-child(7)) {
-            --table-font-size: 13.5px;
-            --table-line-height: 1.22;
-            --table-cell-y: 6px;
-            --table-cell-x: 10px;
-        }
-
-        /* Tabele zawierające co najmniej 8 wierszy. */
-        .slide.layout-data-table:has(tbody tr:nth-child(8)),
-        .slide.layout-comparison-table:has(tbody tr:nth-child(8)) {
-            --table-font-size: 11.5px;
-            --table-line-height: 1.18;
-            --table-cell-y: 4px;
-            --table-cell-x: 7px;
-            padding: 20px 28px;
-        }
-
-        /* Najgęstsza tabela modeli   co najmniej 11 wierszy. */
-        .slide.layout-comparison-table:has(tbody tr:nth-child(11)) {
-            --table-font-size: 9.5px;
-            --table-line-height: 1.12;
-            --table-cell-y: 3px;
-            --table-cell-x: 6px;
-            padding: 14px 22px;
-        }
-    </style>
+ 
 
     <meta property="og:locale" content="pl_PL">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Proces ekstrakcji danych z polskich dokumentów: FineReader + LLM vs modele VL">
     <meta property="og:description" content="Presentation for WDI">
-    <meta property="og:url" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/">
+    <meta property="og:url" content=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/">
     <meta property="og:site_name" content="Proces ekstrakcji danych z polskich dokumentów: FineReader + LLM vs modele VL">
-    <meta property="og:image" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/FacebookImageForMainPage.jpg"><meta property="og:image:width" content="1200">
+    <meta property="og:image" content=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/forSocialMedia/FacebookImageForMainPage.jpg"><meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:title" content="Proces ekstrakcji danych z polskich dokumentów: FineReader + LLM vs modele VL">
     <meta name="twitter:description" content="Presentation for DataScience Summit 2026">
-    <meta name="twitter:image" content="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/FacebookImageForMainPage.jpg">
+    <meta name="twitter:image" content=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/forSocialMedia/FacebookImageForMainPage.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@walenciukc">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon/icon16x16.png">
-    <link rel="apple-touch-icon" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon180x180.png">
-    <link rel="shortcut icon" href="https://panniebieski.github.io/WDI_Serwer_MCP_na_dwa_sposoby_z_u-ytkownikami/forSocialMedia/icon16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/forSocialMedia/icon/icon16x16.png">
+    <link rel="apple-touch-icon" href=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/forSocialMedia/icon180x180.png">
+    <link rel="shortcut icon" href=" https://panniebieski.github.io/DataScience_Proces_ekstrakcji_danych_z_polskich_dokument_w_FineReader_LLM_vs_modele_VL/forSocialMedia/icon16x16.png">
 </head>
 
 <body class="shower list">
@@ -1202,7 +1124,7 @@
                         <li class="next">Modele należy oceniać na rzeczywistych polskich dokumentach, a nie tylko na podstawie publicznych rankingów.</li>
                         <li class="next">Kluczowy jest kompromis między jakością, zużyciem VRAM, szybkością i formatem wyniku.</li>
                         <li class="next">Docelowo warto kierować różne typy dokumentów do wyspecjalizowanych modeli.</li>
-                    
+                    </ol>
                 </ol>
             </div>
         </div>
@@ -1211,6 +1133,18 @@
         <figure>
             <img class="cover" src="pictures/feedback.png" alt="screenshot" />
         </figure>
+    </section>
+         <section class="slide theme-dark tag-darkblue fullscreen">
+        <div class="layout-splitpoint">
+            <div class="split-image">
+                <img title="icon" src="pictures/qrcode.png" />
+            </div>
+            <div class="split-text">
+                <ol class="nonumbers">
+                  <li class="bold2">Link do prezentacji</li>
+                </ol>
+            </div>
+        </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
