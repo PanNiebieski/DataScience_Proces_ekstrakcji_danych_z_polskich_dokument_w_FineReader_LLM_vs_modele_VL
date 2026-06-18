@@ -202,7 +202,7 @@
                     <li class="bold2">Kryteria</li>
                     <ol class="nonumbers">
                         <li class="next">Nie używamy chmury, czyli wdrażamy rozwiązanie lokalnie (on-premises).</li>
-                        <li class="next">Rozwiązania na licencjach MIT, Apache 2.0 lub CC BY.</li>
+                        <li class="next">Licencja musi zezwalać na zastosowania komercyjne, np. MIT lub Apache 2.0.</li>
                         <li class="next">Obsługa języka polskiego</li>
                         <li class="next">Uwzględniamy wyłącznie koszty infrastruktury serwerowej.</li>
                         <li class="next">Nie będziemy tworzyć własnych modeli</li>
@@ -214,7 +214,7 @@
 
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           To jakie modele spełniają te warunki w 2026 roku?
+           Jakie modele bierzemy pod uwagę w 2026 roku?
         </span></span>
     </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
@@ -228,7 +228,7 @@
                         <li class="next">DeepSeek-OCR 2</li>
                         <li class="next">Qianfan-OCR</li>
                         <li class="next">GLM-OCR</li>
-                        <li class="next">GutenOCR</li>
+                        <li class="next">GutenOCR — wyłącznie porównawczo, bez zastosowań komercyjnych</li>
                         <li class="next">NuMarkdown-8B-Thinking</li>        
                 </ol>
             </div>
@@ -251,7 +251,7 @@
     </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Ups!<br />Jeden z modeli miał licencję ograniczającą użycie komercyjne
+           GutenOCR-3B: dobre wyniki,<br />ale brak możliwości użycia komercyjnego
         </span></span>
     </section>
     <section class="slide theme-black">
@@ -300,11 +300,11 @@
         <td>Tak, często jako punkt odniesienia</td>
       </tr>
       <tr>
-        <td><code class="dt-badge">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--red">GutenOCR-3B</code></td>
         <td>12 GB / 16 GB</td>
         <td>OCR, bbox, lokalne czytanie regionów, JSON, Markdown</td>
         <td><code class="dt-badge dt-badge--red">CC-BY-NC-4.0</code></td>
-        <td>Raczej niszowo / lokalne testy</td>
+        <td>Tylko testy i porównania niekomercyjne</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qianfan-OCR</code></td>
@@ -697,11 +697,11 @@
     <tbody>
       <tr>
         <td>Klasyczny OCR</td>
-        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
       </tr>
       <tr>
         <td>OCR uszkodzonych skanów, pełny run</td>
-        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
       </tr>
       <tr>
         <td>OCR pisma odręcznego</td>
@@ -769,7 +769,7 @@
       </tr>
       <tr>
         <td>Markdown conversion</td>
-        <td><code class="dt-badge dt-badge--yellow">GutenOCR/GLM</code> dla tekstu, <code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> dla struktury</td>
+        <td><code class="dt-badge dt-badge--yellow">GLM-OCR</code> dla tekstu, <code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> dla struktury</td>
       </tr>
       <tr>
         <td>JSON / key-value</td>
@@ -816,24 +816,24 @@
     <tbody>
       <tr>
         <td>Klasyczny OCR</td>
-        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--red">GutenOCR-3B*</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
-        <td>Tylko 3 syntetyczne dokumenty; GLM oceniony na 1/3.</td>
+        <td>* GutenOCR tylko do zastosowań niekomercyjnych. Test obejmował 3 syntetyczne dokumenty; GLM oceniono na 1/3.</td>
       </tr>
       <tr>
         <td>OCR uszkodzonych skanów</td>
-        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--red">GutenOCR-3B*</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
-        <td>Podium tylko z pełnych przebiegów 84/84; GLM miał lepszy CER, ale jedynie na 18 stronach.</td>
+        <td>* GutenOCR tylko do zastosowań niekomercyjnych. Ranking oparto na pełnych przebiegach 84/84.</td>
       </tr>
       <tr>
         <td>OCR pisma odręcznego</td>
         <td><code class="dt-badge dt-badge--green">GLM-OCR</code></td>
-        <td><code class="dt-badge dt-badge--yellow">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--red">GutenOCR-3B*</code></td>
         <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
-        <td>Ranking według CER na 10 stronach.</td>
+        <td>* GutenOCR tylko do zastosowań niekomercyjnych. Ranking według CER na 10 stronach.</td>
       </tr>
       <tr>
         <td>Rozumienie pytań po polsku</td>
@@ -930,10 +930,10 @@
       </tr>
       <tr>
         <td>Markdown: zgodność tekstu</td>
-        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--red">GutenOCR-3B*</code></td>
         <td><code class="dt-badge dt-badge--yellow">GLM-OCR</code></td>
         <td><code class="dt-badge dt-badge--blue">Qianfan-OCR</code></td>
-        <td>Ranking według Plain CER.</td>
+        <td>* GutenOCR tylko do zastosowań niekomercyjnych. Ranking według Plain CER.</td>
       </tr>
       <tr>
         <td>Markdown: zachowanie struktury</td>
@@ -962,9 +962,9 @@
                 <ol class="nonumbers">
                     <li class="bold2">Dobór praktyczny</li>
                     <ol class="nonumbers">
-                        <li class="next">Wierne przepisywanie dokumentów: GutenOCR-3B</li>
+                        <li class="next">Wierne przepisywanie dokumentów w zastosowaniach komercyjnych: Qianfan-OCR</li>
                         <li class="next">Jeden model do różnych zadań: Qianfan-OCR</li>
-                        <li class="next">Analiza wizualna, klasyfikacja i pieczątki: Qwen3-VL-8B</li>
+                        <li class="next">Analiza wizualna, klasyfikacja i pieczątki: <br />Qwen3-VL-8B</li>
                         <li class="next">Pismo odręczne: GLM-OCR</li>
                         <li class="next">Najmniejsze zużycie VRAM: PaddleOCR-VL, ale kosztem jakości i wyłącznie do OCR</li>
                     </ol>
@@ -1015,9 +1015,10 @@
 <section class="slide layout-callout theme-dark">
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 2: Czy potrzebujemy tylko wiernie przepisać tekst?</strong></p>
-    <br />
+  
     <p>Użyj klasycznego OCR albo lekkiego OCR-VLM.</p>
-    <p><strong>GutenOCR</strong> jest głównym kandydatem do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong> — lekkim punktem odniesienia.</p>
+    <p>Do zastosowań komercyjnych wybierz <strong>Qianfan-OCR</strong>, a <strong>GLM-OCR</strong> traktuj jako lekki punkt odniesienia.</p>
+    <p><strong>GutenOCR</strong> może służyć jedynie do testów niekomercyjnych</p>
     <p><strong>DeepSeek-OCR 2</strong> traktujemy diagnostycznie: jest szybki, ale obecne testy nie potwierdziły wysokiej jakości OCR.</p>
   </div>
 </section>
@@ -1028,7 +1029,7 @@
     <p><strong>Krok 3: Czy trzeba odtworzyć strukturę dokumentu w Markdown?</strong></p>
     <br />
     <p><strong>Qwen3-VL-8B</strong> najlepiej zachowuje strukturę spośród pozostałych porównywanych modeli.</p>
-    <p><strong>GLM-OCR</strong> i <strong>GutenOCR</strong> lepiej zachowują tekst, lecz słabiej odwzorowują nagłówki, listy i tabele.</p>
+    <p><strong>GLM-OCR</strong> lepiej zachowuje tekst, lecz słabiej odwzorowuje nagłówki, listy i tabele.</p>
     <p>Nie ma obecnie jednego zwycięzcy w całym zadaniu konwersji dokumentu do formatu Markdown.</p>
   </div>
 </section>
@@ -1048,7 +1049,7 @@
 <section class="slide layout-callout theme-dark">
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 5: Czy potrzebujemy lokalizacji elementu na stronie?</strong></p>
-    <br />
+
     <p>Potrzebny jest model zwracający położenie elementów lub ramki ograniczające albo osobny detektor.</p>
     <p><strong>Qianfan-OCR</strong> i <strong>Qwen3-VL</strong> radzą sobie na mapach syntetycznych, ale wyniki nie przenoszą się stabilnie na mapy rzeczywiste.</p>
     <p><strong>DeepSeek-OCR 2</strong> nie zwraca stabilnych ramek ograniczających i nie powinien być używany do lokalizowania elementów.</p>
