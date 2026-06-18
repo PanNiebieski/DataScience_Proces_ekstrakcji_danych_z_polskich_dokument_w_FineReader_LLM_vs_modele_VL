@@ -226,7 +226,6 @@
                 <ol class="nonumbers">
                         <li class="next">Qwen3-VL</li>
                         <li class="next">DeepSeek-OCR 2</li>
-                        <li class="next">HunyuanOCR</li>
                         <li class="next">Qianfan-OCR</li>
                         <li class="next">GLM-OCR</li>
                         <li class="next">GutenOCR</li>
@@ -244,17 +243,27 @@
                 <ol class="nonumbers">
                         <li class="next">PaddleOCR-VL</li>
                         <li class="next">FireRedOCR</li>
-                        <li class="next">dotsOCR / dotsmOCR</li>           
+                        <li class="next">dotsOCR / dotsmOCR</li>    
+                        <li class="next">HunyuanOCR</li>         
                 </ol>
             </div>
         </div>
     </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Ups!<br />Jeden z tych modeli ma licencję ograniczającą użycie komercyjne
+           Ups!<br />Jeden z modeli miał licencję ograniczającą użycie komercyjne
         </span></span>
     </section>
-
+    <section class="slide theme-black">
+        <figure>
+            <img class="cover" src="pictures/licencja.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+         Wyniki HunyuanOCR <br /> musiały zostać usunięte z prezentacji
+        </span></span>
+    </section>
 <section class="slide layout-comparison-table theme-dark">
 
 
@@ -275,13 +284,6 @@
         <td>OCR, układ strony, tabele, formuły, schemat JSON, Markdown</td>
         <td><code class="dt-badge dt-badge--green">MIT</code></td>
         <td>Tak, OmniDocBench / HF evals</td>
-      </tr>
-      <tr>
-        <td><code class="dt-badge">HunyuanOCR 1B</code></td>
-        <td>6 GB / 8 GB</td>
-        <td>OCR, ramki i lokalizacja tekstu, parsowanie dokumentów, JSON, Markdown/HTML/LaTeX na podstawie polecenia</td>
-        <td><code class="dt-badge dt-badge--gray">Other / Tencent</code></td>
-        <td>Tak, OCR/document benchmarks</td>
       </tr>
       <tr>
         <td><code class="dt-badge">PaddleOCR-VL-1.6</code></td>
@@ -357,11 +359,7 @@
   </table>
 
 </section>
-    <section class="slide theme-black">
-        <figure>
-            <img class="cover" src="pictures/licencja.png" alt="screenshot" />
-        </figure>
-    </section>
+
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
            Qwen3-VL-8B działa na 8 GB VRAM
@@ -604,7 +602,6 @@
                     <ol class="nonumbers">
                         <li class="next">Qianfan-OCR</li>
                         <li class="next">Qwen3-VL-8B</li>
-                        <li class="next">HunyuanOCR</li>
                     </ol>
                 </ol>
             </div>
@@ -633,11 +630,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code class="dt-badge">HunyuanOCR</code></td>
-        <td><code class="dt-badge dt-badge--green">ok. 5,0–5,2 GB</code></td>
-        <td>Najlepszy kompromis: lider klasycznego OCR i uszkodzonych skanów, 3. miejsce w piśmie ręcznym i JSON</td>
-      </tr>
       <tr>
         <td><code class="dt-badge">GLM-OCR</code></td>
         <td><code class="dt-badge dt-badge--green">ok. 5,7 GB</code></td>
@@ -669,11 +661,9 @@
 </section>
     <section class="slide layout-callout theme-dark">
       <div class="callout-box" style="max-width:85%">
-        <p>HunyuanOCR oferuje najlepszy stosunek jakości OCR do zużycia VRAM. 
-                    <br /><br />
-          Przy około 5 GB VRAM osiąga najlepsze wyniki w klasycznym OCR i na uszkodzonych skanach. 
+        <p>GLM-OCR oferuje dobry stosunek jakości do zużycia VRAM, szczególnie w przypadku pisma odręcznego.
           <br /><br />
-          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR   gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymagań sprzętowych.</p>
+          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR — gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymagań sprzętowych.</p>
 
       </div>
     </section>
@@ -707,11 +697,11 @@
     <tbody>
       <tr>
         <td>Klasyczny OCR</td>
-        <td><code class="dt-badge dt-badge--green">HunyuanOCR</code></td>
+        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
       </tr>
       <tr>
         <td>OCR uszkodzonych skanów, pełny run</td>
-        <td><code class="dt-badge dt-badge--green">HunyuanOCR</code></td>
+        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
       </tr>
       <tr>
         <td>OCR pisma odręcznego</td>
@@ -779,7 +769,7 @@
       </tr>
       <tr>
         <td>Markdown conversion</td>
-        <td><code class="dt-badge dt-badge--yellow">GutenOCR/GLM</code> dla tekstu, <code class="dt-badge dt-badge--yellow">HunyuanOCR</code> dla struktury</td>
+        <td><code class="dt-badge dt-badge--yellow">GutenOCR/GLM</code> dla tekstu, <code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> dla struktury</td>
       </tr>
       <tr>
         <td>JSON / key-value</td>
@@ -826,30 +816,30 @@
     <tbody>
       <tr>
         <td>Klasyczny OCR</td>
-        <td><code class="dt-badge dt-badge--green">HunyuanOCR</code></td>
-        <td><code class="dt-badge dt-badge--yellow">GutenOCR-3B</code></td>
-        <td><code class="dt-badge dt-badge--blue">Qianfan-OCR</code></td>
+        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
         <td>Tylko 3 syntetyczne dokumenty; GLM oceniony na 1/3.</td>
       </tr>
       <tr>
         <td>OCR uszkodzonych skanów</td>
-        <td><code class="dt-badge dt-badge--green">HunyuanOCR</code></td>
-        <td><code class="dt-badge dt-badge--yellow">GutenOCR-3B</code></td>
-        <td><code class="dt-badge dt-badge--blue">Qianfan-OCR</code></td>
+        <td><code class="dt-badge dt-badge--green">GutenOCR-3B</code></td>
+        <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
         <td>Podium tylko z pełnych przebiegów 84/84; GLM miał lepszy CER, ale jedynie na 18 stronach.</td>
       </tr>
       <tr>
         <td>OCR pisma odręcznego</td>
         <td><code class="dt-badge dt-badge--green">GLM-OCR</code></td>
         <td><code class="dt-badge dt-badge--yellow">GutenOCR-3B</code></td>
-        <td><code class="dt-badge dt-badge--blue">HunyuanOCR</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
         <td>Ranking według CER na 10 stronach.</td>
       </tr>
       <tr>
         <td>Rozumienie pytań po polsku</td>
         <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
-        <td><code class="dt-badge dt-badge--yellow">HunyuanOCR</code></td>
-        <td><code class="dt-badge dt-badge--blue">GLM-OCR</code></td>
+        <td><code class="dt-badge dt-badge--yellow">GLM-OCR</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
         <td>GLM miał krótszy przebieg 6/6 zamiast 21/21.</td>
       </tr>
       <tr>
@@ -877,7 +867,7 @@
         <td>Checkboxy realne</td>
         <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code></td>
-        <td><code class="dt-badge dt-badge--blue">HunyuanOCR</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
         <td>Wszystkie wyniki są słabe; brak praktycznego zwycięzcy.</td>
       </tr>
     </tbody>
@@ -934,9 +924,9 @@
       <tr>
         <td>Rotacja</td>
         <td><code class="dt-badge dt-badge--green">dots.mocr</code></td>
-        <td><code class="dt-badge dt-badge--yellow">GLM-OCR / HunyuanOCR / Qwen3-VL-8B</code></td>
+        <td><code class="dt-badge dt-badge--yellow">GLM-OCR / Qwen3-VL-8B</code></td>
         <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
-        <td>dots.mocr oceniony tylko na 3/6; trzy modele remisują dalej.</td>
+        <td>dots.mocr oceniony tylko na 3/6; pozostałe dwa modele remisują.</td>
       </tr>
       <tr>
         <td>Markdown: zgodność tekstu</td>
@@ -947,17 +937,17 @@
       </tr>
       <tr>
         <td>Markdown: zachowanie struktury</td>
-        <td><code class="dt-badge dt-badge--green">HunyuanOCR</code></td>
-        <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code></td>
-        <td><code class="dt-badge dt-badge--blue">dots.mocr</code></td>
-        <td>Hunyuan miał 3 truncacje, a dots.mocr 10/10 truncacji.</td>
+        <td><code class="dt-badge dt-badge--green">Qwen3-VL-8B</code></td>
+        <td><code class="dt-badge dt-badge--yellow">dots.mocr</code></td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
+        <td>dots.mocr miał 10/10 uciętych odpowiedzi.</td>
       </tr>
       <tr>
         <td>JSON / key-value</td>
         <td><code class="dt-badge dt-badge--green">Qwen3-VL-8B</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
-        <td><code class="dt-badge dt-badge--blue">HunyuanOCR</code></td>
-        <td>Qwen minimalnie wygrywa pod względem trafności pól; Qianfan i Hunyuan generują w 100% poprawny składniowo JSON.</td>
+        <td><code class="dt-badge dt-badge--red">brak rozstrzygnięcia</code></td>
+        <td>Qwen minimalnie wygrywa pod względem trafności pól, a Qianfan generuje w 100% poprawny składniowo JSON.</td>
       </tr>
     </tbody>
   </table>
@@ -972,7 +962,7 @@
                 <ol class="nonumbers">
                     <li class="bold2">Dobór praktyczny</li>
                     <ol class="nonumbers">
-                        <li class="next">Wierne przepisywanie dokumentów: HunyuanOCR</li>
+                        <li class="next">Wierne przepisywanie dokumentów: GutenOCR-3B</li>
                         <li class="next">Jeden model do różnych zadań: Qianfan-OCR</li>
                         <li class="next">Analiza wizualna, klasyfikacja i pieczątki: Qwen3-VL-8B</li>
                         <li class="next">Pismo odręczne: GLM-OCR</li>
@@ -1027,7 +1017,7 @@
     <p><strong>Krok 2: Czy potrzebujemy tylko wiernie przepisać tekst?</strong></p>
     <br />
     <p>Użyj klasycznego OCR albo lekkiego OCR-VLM.</p>
-    <p><strong>HunyuanOCR</strong> jest głównym kandydatem do pełnego OCR, <strong>GutenOCR</strong>   do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong>   jako lekki punkt odniesienia.</p>
+    <p><strong>GutenOCR</strong> jest głównym kandydatem do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong> — lekkim punktem odniesienia.</p>
     <p><strong>DeepSeek-OCR 2</strong> traktujemy diagnostycznie: jest szybki, ale obecne testy nie potwierdziły wysokiej jakości OCR.</p>
   </div>
 </section>
@@ -1037,8 +1027,8 @@
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 3: Czy trzeba odtworzyć strukturę dokumentu w Markdown?</strong></p>
     <br />
-    <p><strong>HunyuanOCR</strong> najlepiej zachowuje strukturę, ale może ucinać treść.</p>
-    <p><strong>GLM-OCR</strong> i <strong>GutenOCR</strong> lepiej trzymają tekst, lecz słabiej odwzorowują nagłówki, listy i tabele.</p>
+    <p><strong>Qwen3-VL-8B</strong> najlepiej zachowuje strukturę spośród pozostałych porównywanych modeli.</p>
+    <p><strong>GLM-OCR</strong> i <strong>GutenOCR</strong> lepiej zachowują tekst, lecz słabiej odwzorowują nagłówki, listy i tabele.</p>
     <p>Nie ma obecnie jednego zwycięzcy w całym zadaniu konwersji dokumentu do formatu Markdown.</p>
   </div>
 </section>
