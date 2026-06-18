@@ -91,17 +91,17 @@
     </section>
         <section class="slide theme-dark tag-darkblue  decor-triple">
         <span class="shout colors"><span>
-           To co jest lepsze?
+           Co jest lepsze?
         </span></span>
     </section>
         <section class="slide theme-dark tag-darkblue  decor-right-stripe ">
         <span class="shout colors"><span>
-           To co jest szybsze?
+           Co jest szybsze?
         </span></span>
     </section>
             <section class="slide theme-dark tag-darkblue  decor-right-stripe ">
         <span class="shout colors"><span>
-           Co wymaga jak najmniejsze ilość VRAM
+           Co wymaga najmniejszej ilości VRAM?
         </span></span>
     </section>
     <section class="slide theme-dark tag-darkblue  decor-bottom-bar ">
@@ -136,16 +136,16 @@
     </section>
     <section class="slide layout-callout theme-dark">
         <div class="callout-box">
-            <p>Przy okazji chciałem spojrzeć też na inne modele które są mieszanką OCR/VL do procesu ekstrakcji tekstu
-                 <br/><br/>Także te z mapą/boxingiem dokumentu w formacie XML</p>
+            <p>Przy okazji chciałem przyjrzeć się także innym modelom, które łączą OCR i VL w procesie ekstrakcji tekstu.
+                 <br/><br/>Również tym, które zwracają mapę dokumentu lub ramki ograniczające w formacie XML.</p>
             <br/>
        
-            <p>bo może są modele które są lepsze w OCR-owaniu niż ABBY FineReader</p>
+            <p>Być może istnieją modele, które lepiej rozpoznają tekst niż ABBYY FineReader.</p>
         </div>
     </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Jaka jest róźnica między<br />OCR, a VL?
+           Jaka jest różnica między<br />OCR a VL?
         </span></span>
     </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
@@ -157,8 +157,8 @@
                 <ol class="nonumbers">
                     <li class="bold2">OCR</li>
                     <ol class="nonumbers">
-                        <li class="next">OCR to model/pipeline, którego głównym zadaniem jest odczytać tekst z obrazu/pdf</li>
-                        <li class="next">Dobry OCR może też zwracać pozycje tekstu, bloki, tabele, czasem strukturę strony</li>
+                        <li class="next">OCR to model lub potok, którego głównym zadaniem jest odczytywanie tekstu z obrazu lub pliku PDF.</li>
+                        <li class="next">Dobry OCR może też zwracać pozycje tekstu, bloki, tabele, a czasem również strukturę strony.</li>
                     </ol>
                 </ol>
             </div>
@@ -171,10 +171,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">VL / VLM to Vision-Language Model, czyli model obraz + język</li>
+                    <li class="bold2">VL/VLM to Vision-Language Model, czyli model łączący obraz i język.</li>
                     <ol class="nonumbers">
-                        <li class="next">On nie tylko czyta tekst, ale też "rozumie" obraz jako całość i reaguje na prompt</li>
-                        <li class="next">Czyli: "odczytaj tekst", ale też "zrób Markdown", "wyciągnij dane z faktury", "opisz tabelę", "znajdź podpis", "zmapuj pola do JSON".</li>
+                        <li class="next">Nie tylko odczytuje tekst, lecz także „rozumie” obraz jako całość i reaguje na polecenia.</li>
+                        <li class="next">Może więc wykonać polecenia: „odczytaj tekst”, „utwórz Markdown”, „wyodrębnij dane z faktury”, „opisz tabelę”, „znajdź podpis” lub „zmapuj pola do JSON-u”.</li>
                     </ol>
                 </ol>
             </div>
@@ -182,12 +182,12 @@
     </section>  
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Większąść modeli jest hybrydą OCR i VL
+           Większość modeli jest hybrydą OCR i VL
         </span></span>
     </section>
         <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           To jakie mamy kryteria wyboru modeli do ekstrakcji dokumentów
+           Jakie mamy kryteria wyboru modeli do ekstrakcji danych z dokumentów?
         </span></span>
     </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
@@ -199,10 +199,10 @@
                 <ol class="nonumbers">
                     <li class="bold2">Kryteria</li>
                     <ol class="nonumbers">
-                        <li class="next">Nie używamy chmury czyli robimy to On-Premise</li>
-                        <li class="next">Rozwiązania na licencji MIT, Apache 2.0, CC-By-BY</li>
+                        <li class="next">Nie używamy chmury, czyli wdrażamy rozwiązanie lokalnie (on-premises).</li>
+                        <li class="next">Rozwiązania na licencjach MIT, Apache 2.0 lub CC BY.</li>
                         <li class="next">Obsługa języka polskiego</li>
-                        <li class="next">Koszty tylko czysto serwerowe</li>
+                        <li class="next">Uwzględniamy wyłącznie koszty infrastruktury serwerowej.</li>
                         <li class="next">Nie będziemy tworzyć własnych modeli</li>
                     </ol>
                 </ol>
@@ -249,7 +249,7 @@
     </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Ups<br />jeden z tych modeli jest na licencji komercyjnej
+           Ups!<br />Jeden z tych modeli ma licencję ograniczającą użycie komercyjne
         </span></span>
     </section>
 
@@ -270,30 +270,30 @@
       <tr>
         <td><code class="dt-badge">GLM-OCR 0.9B</code></td>
         <td>6 GB / 8 GB</td>
-        <td>OCR, layout, tabele, formuły, JSON schema, Markdown</td>
+        <td>OCR, układ strony, tabele, formuły, schemat JSON, Markdown</td>
         <td><code class="dt-badge dt-badge--green">MIT</code></td>
         <td>Tak, OmniDocBench / HF evals</td>
       </tr>
       <tr>
         <td><code class="dt-badge">HunyuanOCR 1B</code></td>
         <td>6 GB / 8 GB</td>
-        <td>OCR, bbox/spotting, parsing dokumentów, JSON, Markdown/HTML/LaTeX przez prompt</td>
+        <td>OCR, ramki i lokalizacja tekstu, parsowanie dokumentów, JSON, Markdown/HTML/LaTeX na podstawie polecenia</td>
         <td><code class="dt-badge dt-badge--gray">Other / Tencent</code></td>
         <td>Tak, OCR/document benchmarks</td>
       </tr>
       <tr>
         <td><code class="dt-badge">PaddleOCR-VL-1.6</code></td>
         <td>8 GB / 12 GB</td>
-        <td>OCR, layout, tabele, formuły, wykresy, JSON, Markdown</td>
+        <td>OCR, układ strony, tabele, formuły, wykresy, JSON, Markdown</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, bardzo mocno w document parsing</td>
+        <td>Tak, bardzo dobre wyniki w parsowaniu dokumentów</td>
       </tr>
       <tr>
         <td><code class="dt-badge">DeepSeek-OCR 2 3B</code></td>
         <td>12 GB / 16 GB</td>
-        <td>OCR, konwersja dokumentu do Markdown, promptowane tryby OCR; bez jawnych bbox/layout w output</td>
+        <td>OCR, konwersja dokumentu do Markdown, tryby OCR sterowane poleceniami; bez jawnych ramek i układu w wyniku</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, często jako baseline</td>
+        <td>Tak, często jako punkt odniesienia</td>
       </tr>
       <tr>
         <td><code class="dt-badge">GutenOCR-3B</code></td>
@@ -328,7 +328,7 @@
         <td>16 GB / 24 GB</td>
         <td>OCR, grounding 2D, prompt, Markdown/JSON/XML promptowo</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, VLM/OCR benchmarki</td>
+        <td>Tak, benchmarki VLM/OCR</td>
       </tr>
       <tr>
         <td><code class="dt-badge">dots.mocr</code></td>
@@ -349,7 +349,7 @@
         <td>48 GB / 80 GB, RunPod</td>
         <td>OCR, grounding 2D, długie dokumenty, Markdown/JSON/XML promptowo</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, VLM/OCR benchmarki</td>
+        <td>Tak, benchmarki VLM/OCR</td>
       </tr>
     </tbody>
   </table>
@@ -367,14 +367,14 @@
     </section>
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           DeepSeek-OCR 2 cięzki jest w konfiguracji
+           DeepSeek-OCR 2 jest trudny w konfiguracji
         </span></span>
     </section>
 
     <!-- //Tutaj tabeleka z modelami i ich cechami -->
     <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
-           Jakie scenariuszę chcemy przetestować?
+           Jakie scenariusze chcemy przetestować?
         </span></span>
     </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
@@ -384,11 +384,11 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Czy umie odczytać poprawnie tekst. Klasyczny OCR</li>
-                        <li class="next">Czy konwerują dobrze informacje na słownik json klucz/wartość</li>
-                        <li class="next">Czy rozumiją sens języka polskiego przez prompty i pytania</li>
-                        <li class="next">Czy widzi tabelki z ramkami i bez ramek</li>
-                        <li class="next">Czy odczytuje wartości z checkboxów</li>
+                        <li class="next">Czy model poprawnie odczytuje tekst — klasyczny OCR?</li>
+                        <li class="next">Czy dobrze konwertuje informacje do słownika JSON w formacie klucz–wartość?</li>
+                        <li class="next">Czy rozumie język polski w poleceniach i pytaniach?</li>
+                        <li class="next">Czy rozpoznaje tabele z ramkami i bez ramek?</li>
+                        <li class="next">Czy odczytuje stan pól wyboru?</li>
                 </ol>
             </div>
         </div>
@@ -400,10 +400,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Czy umie odczytać mapy i użyć groundingu</li>
-                        <li class="next">Czy mogą stwierdzić czy na dokumencie jest pieczątka</li>
-                        <li class="next">Czy potrafią określić, że dokument B jest tego samego typu do dokument A</li>
-                        <li class="next">Czy dobrze konwertują dokument na markdown</li>
+                        <li class="next">Czy potrafi odczytywać mapy i lokalizować na nich obiekty?</li>
+                        <li class="next">Czy potrafi stwierdzić, czy na dokumencie znajduje się pieczątka?</li>
+                        <li class="next">Czy potrafi określić, że dokument B jest tego samego typu co dokument A?</li>
+                        <li class="next">Czy dobrze konwertuje dokument do formatu Markdown?</li>
                 </ol>
             </div>
         </div>
@@ -415,23 +415,23 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Czy radzą sobie z przechyloną stroną o 10 lub 90 stopni</li>
-                        <li class="next">Czy radzą sobie z rozmytym obrazem ze słabym kontrastem</li>
-                        <li class="next">Czy radzi sobie z moim ręcznym pismem</li>
+                        <li class="next">Czy radzi sobie ze stroną obróconą o 10 lub 90 stopni?</li>
+                        <li class="next">Czy radzi sobie z rozmytym obrazem o słabym kontraście?</li>
+                        <li class="next">Czy radzi sobie z moim pismem odręcznym?</li>
                 </ol>
             </div>
         </div>
     </section>    
     <section class="slide layout-callout theme-dark">
       <div class="callout-box" style="max-width:85%">
-        <p> Na każdy z tych secnariuszym mam oddzielny test z odpowiednim zestawem dokumentów</p>
+        <p>Dla każdego z tych scenariuszy mam oddzielny test z odpowiednim zestawem dokumentów.</p>
       </div>
     </section>
     <section class="slide layout-callout theme-dark">
       <div class="callout-box" style="max-width:85%">
-        <p> Próbki też powinny być wymieszane w swojej trudności</p>
+        <p>Próbki powinny mieć zróżnicowany poziom trudności.</p>
         <br />
-        <p>Dokumenty też mają dane testowe z wyjątkiem dokumentów z pieczątkami</p>
+        <p>Dokumenty zawierają dane testowe, z wyjątkiem dokumentów z pieczątkami.</p>
       </div>
     </section>
 
@@ -447,10 +447,10 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Dokumenty prmitywne do testu samego OCR</li>
-                        <li class="next">Różne faktury, dowody wpłaty, rachunki ponieważ mają one różne formaty tabel</li>
-                        <li class="next">17 stronicowy Biznes Plan dla projektu Uni Europejskiej "Załóż firmę z WUP"</li>
-                        <li class="next">Mapy : Warszawskiego planowania przestrzennego, emisji hałasu komunikacyjnego</li>
+                        <li class="next">Proste dokumenty do testowania samego OCR.</li>
+                        <li class="next">Różne faktury, dowody wpłaty i rachunki, ponieważ zawierają tabele w różnych formatach.</li>
+                        <li class="next">17-stronicowy biznesplan projektu Unii Europejskiej „Załóż firmę z WUP”.</li>
+                        <li class="next">Mapy warszawskiego planowania przestrzennego oraz emisji hałasu komunikacyjnego.</li>
                 </ol>
             </div>
         </div>
@@ -512,11 +512,11 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Pisma sądowe a dokładnie : Treści orzeczenia</li>
+                        <li class="next">Pisma sądowe, a dokładnie treści orzeczeń.</li>
                         <li class="next">Wnioski o wydanie dowodu osobistego</li>
-                        <li class="next">Ręczne notatki moje</li>
+                        <li class="next">Moje odręczne notatki.</li>
                         <li class="next">Prawdziwe dokumenty urzędowe z pieczątkami</li>
-                        <li class="next">Proste sztuczne checkboxy i tabelki</li>
+                        <li class="next">Proste syntetyczne pola wyboru i tabele.</li>
                 </ol>
             </div>
         </div>
@@ -554,7 +554,7 @@
             <div class="split-text">
                 <ol class="nonumbers">
                         <li class="next">Obrócone dokumenty</li>
-                        <li class="next">Uszkodzone dokumenty czyli takie które nie są czytelne</li>
+                        <li class="next">Uszkodzone dokumenty, czyli takie, które są słabo czytelne.</li>
                 </ol>
             </div>
         </div>
@@ -581,7 +581,7 @@
     </section>
     <section class="slide theme-dark tag-darkblue  decor-corners-glow">
         <span class="shout colors"><span>
-           Oceniając też potrzebę zurzycia VRAM
+           Z uwzględnieniem zużycia VRAM
         </span></span>
     </section>
     <section class="slide layout-callout theme-dark">
@@ -601,7 +601,7 @@
                     <li class="bold2">Najlepszy model ogólnie po uśrednieniu wszystkich zastosowań</li>
                     <ol class="nonumbers">
                         <li class="next">Qianfan-OCR</li>
-                        <li class="next">Qwen3-VL-8</li>
+                        <li class="next">Qwen3-VL-8B</li>
                         <li class="next">HunyuanOCR</li>
                     </ol>
                 </ol>
@@ -639,22 +639,22 @@
       <tr>
         <td><code class="dt-badge">GLM-OCR</code></td>
         <td><code class="dt-badge dt-badge--green">ok. 5,7 GB</code></td>
-        <td>Dobry stosunek jakość/VRAM, szczególnie pismo ręczne; wyniki są jednak mniej kompletne</td>
+        <td>Dobry stosunek jakości do zużycia VRAM, szczególnie w przypadku pisma odręcznego; wyniki są jednak mniej kompletne</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qwen3-VL-8B</code></td>
         <td><code class="dt-badge dt-badge--yellow">ok. 6,5–7,6 GB</code></td>
-        <td>Najlepszy bardziej uniwersalny VLM nawet lokalne 8 GB</td>
+        <td>Najlepszy, bardziej uniwersalny VLM, działający lokalnie nawet przy 8 GB VRAM</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--red">ok. 7,4–10,3 GB</code></td>
-        <td>Najbardziej wszechstronny jakościowo, ale mniej oszczędny i często używa CPU offload</td>
+        <td>Najbardziej wszechstronny pod względem jakości, ale mniej oszczędny i często przenosi część obliczeń na CPU</td>
       </tr>
       <tr>
         <td><code class="dt-badge">PaddleOCR-VL</code></td>
         <td><code class="dt-badge dt-badge--green">ok. 2,2 GB</code></td>
-        <td>Najmniejsze zużycie, lecz słabe wyniki i wolna inferencja</td>
+        <td>Najmniejsze zużycie VRAM, lecz słabe wyniki i wolne wnioskowanie</td>
       </tr>
       <tr>
         <td><code class="dt-badge">FireRed-OCR</code></td>
@@ -671,7 +671,7 @@
                     <br /><br />
           Przy około 5 GB VRAM osiąga najlepsze wyniki w klasycznym OCR i na uszkodzonych skanach. 
           <br /><br />
-          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR, gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymaga</p>
+          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR — gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymagań sprzętowych.</p>
 
       </div>
     </section>
@@ -781,7 +781,7 @@
       </tr>
       <tr>
         <td>JSON / key-value</td>
-        <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> minimalnie field accuracy, <code class="dt-badge dt-badge--green">Qianfan-OCR</code> stabilniejszy JSON</td>
+        <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> — minimalnie wyższa trafność pól; <code class="dt-badge dt-badge--green">Qianfan-OCR</code> — stabilniejszy JSON</td>
       </tr>
     </tbody>
   </table>
@@ -862,7 +862,7 @@
         <td><code class="dt-badge dt-badge--green">Qwen3-VL-8B</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--blue">NuMarkdown-8B</code></td>
-        <td>NuMarkdown ma wysoki recall, ale dużo false positive i zerową lokalizację.</td>
+        <td>NuMarkdown ma wysoką czułość, ale wiele wyników fałszywie dodatnich i zerową skuteczność lokalizacji.</td>
       </tr>
       <tr>
         <td>Checkboxy syntetyczne</td>
@@ -955,7 +955,7 @@
         <td><code class="dt-badge dt-badge--green">Qwen3-VL-8B</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--blue">HunyuanOCR</code></td>
-        <td>Qwen minimalnie wygrywa field accuracy; Qianfan i Hunyuan mają 100% poprawnego JSON-u.</td>
+        <td>Qwen minimalnie wygrywa pod względem trafności pól; Qianfan i Hunyuan generują w 100% poprawny składniowo JSON.</td>
       </tr>
     </tbody>
   </table>
@@ -974,7 +974,7 @@
                         <li class="next">Jeden model do różnych zadań: Qianfan-OCR</li>
                         <li class="next">Analiza wizualna, klasyfikacja i pieczątki: Qwen3-VL-8B</li>
                         <li class="next">Pismo odręczne: GLM-OCR</li>
-                        <li class="next">Minimalne VRAM: PaddleOCR-VL, ale kosztem jakości i tylko OCR</li>
+                        <li class="next">Najmniejsze zużycie VRAM: PaddleOCR-VL, ale kosztem jakości i wyłącznie do OCR</li>
                     </ol>
                 </ol>
             </div>
@@ -994,7 +994,7 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Z czym modelem sobie nie radzą</li>
+                    <li class="bold2">Z czym modele sobie nie radzą</li>
                     <ol class="nonumbers">
                         <li class="next">Checkboxy rzeczywiste: modele wykrywają, że checkboxy istnieją, ale słabo przypisują etykiety i rozpoznają ich zaznaczenie.</li>
                         <li class="next">Mapy rzeczywiste: Qianfan-OCR osiągnął najlepszy wynik, ale poprawnie lokalizował tylko około 33% obiektów.</li>
@@ -1006,7 +1006,7 @@
     </section>
     <section class="slide theme-dark tag-darkblue  decor-corners-glow">
         <span class="shout colors"><span>
-           Drzewko decyzjne
+           Drzewo decyzyjne
         </span></span>
     </section>
 <!-- Krok 1: warstwa tekstowa -->
@@ -1025,7 +1025,7 @@
     <p><strong>Krok 2: Czy potrzebujemy tylko wiernie przepisać tekst?</strong></p>
     <br />
     <p>Użyj klasycznego OCR albo lekkiego OCR-VLM.</p>
-    <p><strong>HunyuanOCR</strong> jest głównym kandydatem do pełnego OCR, <strong>GutenOCR</strong> do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong> jako lekki baseline.</p>
+    <p><strong>HunyuanOCR</strong> jest głównym kandydatem do pełnego OCR, <strong>GutenOCR</strong> — do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong> — jako lekki punkt odniesienia.</p>
     <p><strong>DeepSeek-OCR 2</strong> traktujemy diagnostycznie: jest szybki, ale obecne testy nie potwierdziły wysokiej jakości OCR.</p>
   </div>
 </section>
@@ -1037,7 +1037,7 @@
     <br />
     <p><strong>HunyuanOCR</strong> najlepiej zachowuje strukturę, ale może ucinać treść.</p>
     <p><strong>GLM-OCR</strong> i <strong>GutenOCR</strong> lepiej trzymają tekst, lecz słabiej odwzorowują nagłówki, listy i tabele.</p>
-    <p>Nie ma obecnie jednego zwycięzcy dla całego zadania document-to-Markdown.</p>
+    <p>Nie ma obecnie jednego zwycięzcy w całym zadaniu konwersji dokumentu do formatu Markdown.</p>
   </div>
 </section>
 
@@ -1048,7 +1048,7 @@
     <br />
     <p>Dla pieczątek i typu dokumentu wybierz <strong>Qwen3-VL</strong>, a dla polskich pytań semantycznych i tabel syntetycznych <strong>Qianfan-OCR</strong>.</p>
     <p>Żaden z testowanych modeli nie osiągnął jakości produkcyjnej na rzeczywistych checkboxach.</p>
-    <p>W produkcji warto zastosować osobny detector checkboxów i OCR ich etykiet.</p>
+    <p>W produkcji warto zastosować osobny detektor pól wyboru oraz OCR ich etykiet.</p>
   </div>
 </section>
 
@@ -1057,9 +1057,9 @@
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 5: Czy potrzebujemy lokalizacji elementu na stronie?</strong></p>
     <br />
-    <p>Potrzebny jest model zwracający grounding lub bounding box albo osobny detector.</p>
+    <p>Potrzebny jest model zwracający położenie elementów lub ramki ograniczające albo osobny detektor.</p>
     <p><strong>Qianfan-OCR</strong> i <strong>Qwen3-VL</strong> radzą sobie na mapach syntetycznych, ale wyniki nie przenoszą się stabilnie na mapy rzeczywiste.</p>
-    <p><strong>DeepSeek-OCR 2</strong> nie zwraca stabilnych bboxów i nie powinien być traktowany jako model groundingowy.</p>
+    <p><strong>DeepSeek-OCR 2</strong> nie zwraca stabilnych ramek ograniczających i nie powinien być używany do lokalizowania elementów.</p>
   </div>
 </section>
 
@@ -1068,7 +1068,7 @@
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 6: Czy dokument jest słabej jakości?</strong></p>
     <br />
-    <p>Najpierw zastosuj preprocessing: korektę orientacji, deskew, poprawę kontrastu i odszumianie.</p>
+    <p>Najpierw zastosuj wstępne przetwarzanie obrazu: korektę orientacji i przekrzywienia, poprawę kontrastu oraz odszumianie.</p>
     <p>Dopiero potem uruchom OCR lub VLM dobrany do właściwego zadania.</p>
     <p>Nie należy zakładać, że duży model sam naprawi rozmyty, przekrzywiony lub zabrudzony skan.</p>
   </div>
@@ -1089,7 +1089,7 @@
   <div class="callout-box" style="max-width:85%">
     <p><strong>Krok 8: Czy system potrzebuje gotowego JSON lub key-value?</strong></p>
     <br />
-    <p><strong>Qianfan-OCR</strong> jest najstabilniejszym samodzielnym wyborem, a <strong>Qwen3-VL</strong> osiąga nieco wyższą trafność pól, lecz wymaga kontroli formatu i retry.</p>
+    <p><strong>Qianfan-OCR</strong> jest najstabilniejszym samodzielnym wyborem, a <strong>Qwen3-VL</strong> osiąga nieco wyższą trafność pól, lecz wymaga kontroli formatu i ponawiania prób.</p>
     <p>Najbezpieczniejszy pipeline to OCR, następnie LLM, walidacja JSON Schema i ponowienie odpowiedzi w przypadku błędu.</p>
   </div>
 </section>
@@ -1099,7 +1099,7 @@
   <div class="callout-box" style="max-width:85%">
     <p><strong>Główna zasada</strong></p>
     <br />
-    <p>Wybieramy najprostszy pipeline, który poprawnie rozwiązuje konkretne zadanie.</p>
+    <p>Wybieramy najprostszy potok przetwarzania, który poprawnie rozwiązuje konkretne zadanie.</p>
     <p>OCR służy przede wszystkim do odczytu tekstu. VLM jest potrzebny wtedy, gdy znaczenie zależy również od układu strony, obrazu albo położenia elementów.</p>
   </div>
 </section>
@@ -1119,10 +1119,10 @@
                 <ol class="nonumbers">
                     <li class="bold2">Wnioski</li>
                     <ol class="nonumbers">
-                        <li class="next">Jakość OCR nie oznacza automatycznie poprawnego layoutu, tabel i struktury.</li>
-                        <li class="next">Modele należy oceniać na rzeczywistych polskich dokumentach, nie tylko publicznych rankingach</li>
-                        <li class="next">Kluczowy jest kompromis: jakość, VRAM, szybkość i format wyniku</li>
-                        <li class="next">Docelowo warto kierować różne typy dokumentów do wyspecjalizowanych modeli</li>
+                        <li class="next">Jakość OCR nie oznacza automatycznie poprawnego odwzorowania układu strony, tabel i struktury.</li>
+                        <li class="next">Modele należy oceniać na rzeczywistych polskich dokumentach, a nie tylko na podstawie publicznych rankingów.</li>
+                        <li class="next">Kluczowy jest kompromis między jakością, zużyciem VRAM, szybkością i formatem wyniku.</li>
+                        <li class="next">Docelowo warto kierować różne typy dokumentów do wyspecjalizowanych modeli.</li>
                     </ol>
                 </ol>
             </div>
