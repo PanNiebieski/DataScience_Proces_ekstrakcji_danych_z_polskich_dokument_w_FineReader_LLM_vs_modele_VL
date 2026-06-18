@@ -22,6 +22,86 @@
     <link rel="stylesheet" href="vendors/prism/prism-my-dark.css" />
     <link rel="stylesheet" href="codegrid-dark.css" />
 
+    <style>
+        /*
+         * Automatyczne dopasowanie tabel do slajdu 16:9.
+         * Gęstość tabeli jest wykrywana przez liczbę wierszy w <tbody>.
+         */
+        .slide.layout-data-table,
+        .slide.layout-comparison-table {
+            --table-font-size: 15px;
+            --table-line-height: 1.3;
+            --table-cell-y: 8px;
+            --table-cell-x: 12px;
+            padding: 28px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide.layout-data-table .dt-table,
+        .slide.layout-comparison-table .ct-table.ct-table--wide {
+            width: 100%;
+            margin: 0 !important;
+            font-size: var(--table-font-size) !important;
+            line-height: var(--table-line-height);
+            table-layout: fixed;
+        }
+
+        .slide.layout-data-table .dt-table thead th,
+        .slide.layout-data-table .dt-table tbody td,
+        .slide.layout-comparison-table .ct-table.ct-table--wide thead th,
+        .slide.layout-comparison-table .ct-table.ct-table--wide tbody td {
+            padding: var(--table-cell-y) var(--table-cell-x);
+            overflow-wrap: anywhere;
+            hyphens: auto;
+        }
+
+        .slide.layout-data-table .dt-table thead th,
+        .slide.layout-comparison-table .ct-table.ct-table--wide thead th {
+            font-size: 1em !important;
+            line-height: 1.15;
+        }
+
+        .slide.layout-data-table .dt-table code.dt-badge,
+        .slide.layout-comparison-table .ct-table.ct-table--wide code.dt-badge {
+            max-width: 100%;
+            padding: 1px 5px;
+            font-size: 0.88em;
+            line-height: 1.35;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        /* Tabele zawierające co najmniej 7 wierszy. */
+        .slide.layout-data-table:has(tbody tr:nth-child(7)) {
+            --table-font-size: 13.5px;
+            --table-line-height: 1.22;
+            --table-cell-y: 6px;
+            --table-cell-x: 10px;
+        }
+
+        /* Tabele zawierające co najmniej 8 wierszy. */
+        .slide.layout-data-table:has(tbody tr:nth-child(8)),
+        .slide.layout-comparison-table:has(tbody tr:nth-child(8)) {
+            --table-font-size: 11.5px;
+            --table-line-height: 1.18;
+            --table-cell-y: 4px;
+            --table-cell-x: 7px;
+            padding: 20px 28px;
+        }
+
+        /* Najgęstsza tabela modeli   co najmniej 11 wierszy. */
+        .slide.layout-comparison-table:has(tbody tr:nth-child(11)) {
+            --table-font-size: 9.5px;
+            --table-line-height: 1.12;
+            --table-cell-y: 3px;
+            --table-cell-x: 6px;
+            padding: 14px 22px;
+        }
+    </style>
+
     <meta property="og:locale" content="pl_PL">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Proces ekstrakcji danych z polskich dokumentów: FineReader + LLM vs modele VL">
@@ -384,7 +464,7 @@
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                        <li class="next">Czy model poprawnie odczytuje tekst — klasyczny OCR?</li>
+                        <li class="next">Czy model poprawnie odczytuje tekst   klasyczny OCR?</li>
                         <li class="next">Czy dobrze konwertuje informacje do słownika JSON w formacie klucz–wartość?</li>
                         <li class="next">Czy rozumie język polski w poleceniach i pytaniach?</li>
                         <li class="next">Czy rozpoznaje tabele z ramkami i bez ramek?</li>
@@ -443,7 +523,7 @@
        <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/07.png" />
+                <img title="icon" src="pictures/iconsFr/08.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -508,7 +588,7 @@
            <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/07.png" />
+                <img title="icon" src="pictures/iconsFr/09.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -549,7 +629,7 @@
                <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/07.png" />
+                <img title="icon" src="pictures/iconsFr/10.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -594,7 +674,7 @@
     <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/01.png" />
+                <img title="icon" src="pictures/iconsFr/11.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -622,12 +702,12 @@
 <section class="slide layout-data-table theme-dark">
 
 
-  <table class="dt-table" style="font-size: 18px !important;;">
+  <table class="dt-table">
     <thead>
       <tr>
-        <th class="dt-col-narrow"  style="font-size: 18px !important;">Model</th>
-        <th class="dt-col-mid"  style="font-size: 18px !important;">Typowe VRAM w porównywalnych testach</th>
-        <th style="font-size: 18px !important;">Ocena efektywności</th>
+        <th class="dt-col-narrow">Model</th>
+        <th class="dt-col-mid">Typowe VRAM w porównywalnych testach</th>
+        <th>Ocena efektywności</th>
       </tr>
     </thead>
     <tbody>
@@ -671,7 +751,7 @@
                     <br /><br />
           Przy około 5 GB VRAM osiąga najlepsze wyniki w klasycznym OCR i na uszkodzonych skanach. 
           <br /><br />
-          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR — gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymagań sprzętowych.</p>
+          Qwen3-VL jest lepszym wyborem, gdy ważniejsza jest wszechstronność, a Qianfan-OCR   gdy priorytetem jest maksymalna skuteczność w wielu zadaniach kosztem większych wymagań sprzętowych.</p>
 
       </div>
     </section>
@@ -690,7 +770,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 1/2 — Obszary 1–8
+     SLAJD 1/2   Obszary 1–8
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-data-table theme-dark">
 
@@ -742,7 +822,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 2/2 — Obszary 9–15
+     SLAJD 2/2   Obszary 9–15
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-data-table theme-dark">
 
@@ -781,7 +861,7 @@
       </tr>
       <tr>
         <td>JSON / key-value</td>
-        <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code> — minimalnie wyższa trafność pól; <code class="dt-badge dt-badge--green">Qianfan-OCR</code> — stabilniejszy JSON</td>
+        <td><code class="dt-badge dt-badge--yellow">Qwen3-VL-8B</code>   minimalnie wyższa trafność pól; <code class="dt-badge dt-badge--green">Qianfan-OCR</code>   stabilniejszy JSON</td>
       </tr>
     </tbody>
   </table>
@@ -805,7 +885,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 1/2 — Obszary 1–8
+     SLAJD 1/2   Obszary 1–8
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-comparison-table theme-dark">
 
@@ -885,7 +965,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════════════
-     SLAJD 2/2 — Obszary 9–16
+     SLAJD 2/2   Obszary 9–16
      ══════════════════════════════════════════════════════════════ -->
 <section class="slide layout-comparison-table theme-dark">
 
@@ -964,7 +1044,7 @@
     <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/01.png" />
+                <img title="icon" src="pictures/iconsFr/12.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -990,7 +1070,7 @@
     <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/01.png" />
+                <img title="icon" src="pictures/iconsFr/13.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
@@ -1025,7 +1105,7 @@
     <p><strong>Krok 2: Czy potrzebujemy tylko wiernie przepisać tekst?</strong></p>
     <br />
     <p>Użyj klasycznego OCR albo lekkiego OCR-VLM.</p>
-    <p><strong>HunyuanOCR</strong> jest głównym kandydatem do pełnego OCR, <strong>GutenOCR</strong> — do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong> — jako lekki punkt odniesienia.</p>
+    <p><strong>HunyuanOCR</strong> jest głównym kandydatem do pełnego OCR, <strong>GutenOCR</strong>   do solidnej, lecz wolniejszej transkrypcji, a <strong>GLM-OCR</strong>   jako lekki punkt odniesienia.</p>
     <p><strong>DeepSeek-OCR 2</strong> traktujemy diagnostycznie: jest szybki, ale obecne testy nie potwierdziły wysokiej jakości OCR.</p>
   </div>
 </section>
@@ -1113,17 +1193,16 @@
        <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/01.png" />
+                <img title="icon" src="pictures/iconsFr/14.png" />
             </div>
             <div class="split-text">
                 <ol class="nonumbers">
-                    <li class="bold2">Wnioski</li>
-                    <ol class="nonumbers">
+             
                         <li class="next">Jakość OCR nie oznacza automatycznie poprawnego odwzorowania układu strony, tabel i struktury.</li>
                         <li class="next">Modele należy oceniać na rzeczywistych polskich dokumentach, a nie tylko na podstawie publicznych rankingów.</li>
                         <li class="next">Kluczowy jest kompromis między jakością, zużyciem VRAM, szybkością i formatem wyniku.</li>
                         <li class="next">Docelowo warto kierować różne typy dokumentów do wyspecjalizowanych modeli.</li>
-                    </ol>
+                    
                 </ol>
             </div>
         </div>
@@ -1135,7 +1214,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         SCRIPTS — All unchanged
+         SCRIPTS   All unchanged
          ═══════════════════════════════════════════════════════════════════ -->
 
     <!-- Gamepad support (optional) -->
