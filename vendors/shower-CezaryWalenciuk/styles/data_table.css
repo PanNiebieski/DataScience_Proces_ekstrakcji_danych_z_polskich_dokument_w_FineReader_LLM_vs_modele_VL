@@ -38,16 +38,19 @@
 
 .slide.layout-data-table .dt-header {
   margin-bottom: 18px;
+  margin-top: -20px;
 }
 
 .slide.layout-data-table .dt-header h2 {
   font-size: 20px;
   font-weight: 700;
-  color: var(--c-light, #e8e8e8);
+color: white !important    ;
   border: none;
   margin: 0;
   padding: 0;
   line-height: 1.3;
+  padding: 15px;
+      background-color: var(--tag-darkestblue) !important;
 }
 
 /* ── Tabela ───────────────────────────────────────────────────────────────── */
@@ -55,10 +58,9 @@
 .slide.layout-data-table .dt-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
   margin-left: 0px;
-  margin-top:-20px;
 }
 
 /* ── Nagłówki kolumn ─────────────────────────────────────────────────────── */
@@ -100,11 +102,11 @@
 .dt-badge {
   display: inline-block;
   font-family: var(--font-mono, 'Fira Code', 'Consolas', monospace);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
-  color: #fca5a5;                       /* jasny różowy tekst */
-  background: rgba(239, 68, 68, 0.15);  /* różowe tło */
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #eeebff;                       /* jasny różowy tekst */
+  background: rgba(148, 68, 239, 0.15);  /* różowe tło */
+  border: 1px solid rgba(68, 136, 239, 0.3);
   border-radius: 4px;
   padding: 1px 6px;
   line-height: 1.6;
@@ -124,18 +126,4 @@
   color: #86efac;
   background: rgba(134, 239, 172, 0.12);
   border-color: rgba(134, 239, 172, 0.3);
-}
-
-/* Wariant niebieski */
-.dt-badge--blue {
-  color: #93c5fd;
-  background: rgba(147, 197, 253, 0.12);
-  border-color: rgba(147, 197, 253, 0.3);
-}
-
-/* Wariant szary (neutralny / niejasny) */
-.dt-badge--gray {
-  color: #a8a8a8;
-  background: rgba(168, 168, 168, 0.12);
-  border-color: rgba(168, 168, 168, 0.3);
 }
