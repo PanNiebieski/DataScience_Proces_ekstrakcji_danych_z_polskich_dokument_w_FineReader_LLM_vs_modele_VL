@@ -251,12 +251,19 @@
             </div>
         </div>
     </section>
- 
+    <section class="slide layout-callout theme-dark">
+      <div class="callout-box" style="max-width:85%">
+        <p>Model <strong>Qwen3.6:35B-A3B</strong></p>
+        <p>Zapewne wygrywajacy, ale wymaga dużo VRAM</p>
+      </div>
+    </section>
+
     <section class="slide theme-black">
         <figure>
             <img class="cover" src="pictures/licencja.png" alt="screenshot" />
         </figure>
-    </section>        <section class="slide theme-dark tag-darkpurple  decor-corners2">
+    </section>
+            <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
          Wyniki HunyuanOCR <br /> musiały zostać usunięte z prezentacji
         </span></span>
@@ -285,28 +292,28 @@
         <td>8 GB / 16 GB</td>
         <td>OCR, decyzje wizualne, typ dokumentu, pieczątki, JSON/Markdown promptowo</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, pełne wyniki w naszych testach</td>
+        <td>ParseBench: mean 46.8, text 89.5</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Gemma 4 12B</code></td>
         <td>8 GB Q4_K_M / 24 GB+</td>
         <td>bardzo mocny OCR, tabele, dokument type, pieczątki, mapy syntetyczne, Markdown</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, google/gemma-4-12B; pełne wyniki lokalne Q4_K_M</td>
+        <td>Tak, wyniki na karcie google/gemma-4-12B</td>
       </tr>
       <tr>
         <td><code class="dt-badge">GLM-OCR 0.9B</code></td>
         <td>6 GB / 8 GB</td>
         <td>OCR, pismo odręczne, Markdown i JSON jako punkt odniesienia</td>
         <td><code class="dt-badge dt-badge--green">MIT</code></td>
-        <td>Tak, baseline i pełne porównania</td>
+        <td>Tak, OCR/document benchmarks</td>
       </tr>
       <tr>
         <td><code class="dt-badge">LLaVA-PLLuM</code></td>
         <td>8 GB Q4_K_M / 16 GB+</td>
         <td>polski VLM, test dokumentów, pytania po polsku</td>
         <td><code class="dt-badge dt-badge--yellow">model card</code></td>
-        <td>Tak, starszy publiczny checkpoint Q4_K_M</td>
+        <td>Brak szerokich publicznych rankingów OCR</td>
       </tr>
     </tbody>
   </table>
@@ -329,30 +336,30 @@
       <tr>
         <td><code class="dt-badge">Qwen3-VL-8B-Thinking</code></td>
         <td>48 GB+ / 80 GB, RunPod</td>
-        <td>OCR/VLM z trybem thinking; test dokumentów wymaga chmury, lokalnie kończy się offloadem i timeoutem</td>
+        <td>OCR/VLM z trybem thinking; dokumenty, decyzje wizualne, JSON/Markdown promptowo</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Dodany do testów, bez pełnego rankingu</td>
+        <td>Tak, benchmarki Qwen3-VL/VLM</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qwen3.6:35B-A3B</code></td>
         <td>40 GB Q6_K / 80 GB</td>
         <td>większy model VLM/LLM do testów nie-lokalnych; uruchamiany na RunPod w trybie Q6_K</td>
         <td><code class="dt-badge dt-badge--yellow">zależna od dystrybucji</code></td>
-        <td>Plan RunPod, nie lokalnie</td>
+        <td>Brak jasnych publicznych rankingów OCR</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qianfan-OCR</code></td>
         <td>12 GB / 16 GB</td>
         <td>OCR, bbox/layout, JSON/HTML, KIE, Markdown, pytania po polsku</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, pełne wyniki w naszych testach</td>
+        <td>Tak, OCR/document benchmarks</td>
       </tr>
       <tr>
         <td><code class="dt-badge">DeepSeek-OCR 2</code></td>
         <td>12 GB / 16 GB</td>
         <td>OCR, konwersja dokumentu do Markdown, tryby OCR sterowane poleceniami</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, diagnostycznie; trudna konfiguracja</td>
+        <td>Tak, często jako punkt odniesienia</td>
       </tr>
     </tbody>
   </table>
@@ -377,7 +384,7 @@
         <td>12 GB / 16 GB</td>
         <td>OCR, bbox, lokalne czytanie regionów, JSON, Markdown; bardzo dobre OCR/degraded OCR</td>
         <td><code class="dt-badge dt-badge--red">CC-BY-NC-4.0</code></td>
-        <td>Tylko testy i porównania niekomercyjne</td>
+        <td>Tak, publiczne porównania niekomercyjne</td>
       </tr>
       <tr>
         <td><code class="dt-badge">NuMarkdown-8B-Thinking</code></td>
@@ -391,7 +398,7 @@
         <td>8 GB / 12 GB</td>
         <td>OCR, układ strony, tabele, formuły, wykresy, JSON, Markdown</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, punkt odniesienia dla parsowania dokumentów</td>
+        <td>Tak, benchmarki parsowania dokumentów</td>
       </tr>
       <tr>
         <td><code class="dt-badge">FireRed-OCR</code></td>
@@ -423,21 +430,21 @@
         <td>12 GB / 16 GB</td>
         <td>OCR, bbox, layout JSON, tabele HTML, formuły LaTeX, Markdown</td>
         <td><code class="dt-badge dt-badge--green">MIT</code></td>
-        <td>Tak, OmniDocBench; u nas referencyjnie</td>
+        <td>Tak, OmniDocBench</td>
       </tr>
       <tr>
         <td><code class="dt-badge">dots.mocr</code></td>
         <td>16 GB / 24 GB</td>
         <td>OCR, bbox, layout JSON, Markdown, wizualizacja layoutu</td>
         <td><code class="dt-badge dt-badge--green">MIT</code></td>
-        <td>Tak, olmOCR / OmniDocBench; u nas referencyjnie</td>
+        <td>Tak, olmOCR / OmniDocBench</td>
       </tr>
       <tr>
         <td><code class="dt-badge">Qwen3-VL-30B-A3B</code></td>
         <td>48 GB / 80 GB, RunPod</td>
         <td>OCR, grounding 2D, długie dokumenty, Markdown/JSON/XML promptowo</td>
         <td><code class="dt-badge dt-badge--blue">Apache-2.0</code></td>
-        <td>Tak, większy wariant porównawczy</td>
+        <td>Tak, benchmarki VLM/OCR</td>
       </tr>
       <tr>
         <td><code class="dt-badge dt-badge--red">model wykluczony publicznie</code></td>
@@ -706,7 +713,7 @@
                     <li class="bold2">Najlepszy model ogólnie po aktualizacji wyników</li>
                     <ol class="nonumbers">
                         <li class="next">Gemma 4 12B w Q4_K_M : najlepszy lokalny kandydat ogólnie</li>
-                        <li class="next">Qianfan-OCR : najlepszy mocny wariant chmurowy i semantyczny</li>
+                        <li class="next">Qianfan-OCR : najlepszy model do polskich pytań semantycznych</li>
                         <li class="next">Qwen3-VL-8B-Instruct : najlepszy lekki VLM do decyzji wizualnych</li>
                     </ol>
                 </ol>
@@ -754,7 +761,7 @@
       <tr>
         <td><code class="dt-badge">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--red">ok. 7,4–10,3 GB</code></td>
-        <td>Mocny wariant chmurowy i semantyczny, ale mniej oszczędny i często przenosi część obliczeń na CPU</td>
+        <td>Mocny wariant semantyczny, testowany lokalnie; mniej oszczędny i często przenosi część obliczeń na CPU</td>
       </tr>
       <tr>
         <td><code class="dt-badge">PaddleOCR-VL</code></td>
@@ -774,7 +781,7 @@
       <div class="callout-box" style="max-width:85%">
         <p>Gemma 4 12B w Q4_K_M jest po aktualnych testach najlepszym lokalnym kompromisem jakości i wymagań sprzętowych.
           <br /><br />
-          Qwen3-VL-8B-Instruct zostaje najlepszym lekkim VLM na 8 GB VRAM, a Qianfan-OCR : mocnym wyborem chmurowym, szczególnie przy pytaniach semantycznych po polsku.</p>
+          Qwen3-VL-8B-Instruct zostaje najlepszym lekkim VLM na 8 GB VRAM, a Qianfan-OCR : mocny wybór do pytań semantycznych po polsku, również uruchamiany lokalnie.</p>
 
       </div>
     </section>
@@ -937,7 +944,7 @@
         <td><code class="dt-badge dt-badge--red">GutenOCR-3B*</code></td>
         <td><code class="dt-badge dt-badge--yellow">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--blue">Qwen3-VL-8B</code></td>
-        <td>Gemma 4 i LLaVA-PLLuM nie przejęły tu roli lidera. * GutenOCR tylko niekomercyjnie.</td>
+        <td>* GutenOCR tylko niekomercyjnie.</td>
       </tr>
       <tr>
         <td>OCR pisma odręcznego</td>
@@ -951,7 +958,7 @@
         <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
         <td><code class="dt-badge dt-badge--yellow">Gemma 4</code></td>
         <td><code class="dt-badge dt-badge--blue">LLaVA-PLLuM</code></td>
-        <td>LLaVA-PLLuM dotyczy starszego publicznego checkpointu Q4_K_M, nie gated 250715.</td>
+        <td>Ranking według poprawnych odpowiedzi i poprawnego JSON.</td>
       </tr>
       <tr>
         <td>Typ dokumentu</td>
@@ -1064,12 +1071,6 @@
   </table>
 
 </section>
-    <section class="slide layout-callout theme-dark">
-      <div class="callout-box" style="max-width:85%">
-        <p><strong>Qwen3-VL-8B-Thinking</strong> jest dodany do testów, ale nie ma jeszcze pełnego rankingu publicznego.</p>
-        <p>Lokalny start kończy się praktycznie CPU/offload i timeoutem. Ten model powinien iść osobno na RunPod 48 GB+.</p>
-      </div>
-    </section>
     <section class="slide theme-dark tag-darkblue fullscreen">
         <div class="layout-splitpoint">
             <div class="split-image">
@@ -1080,24 +1081,9 @@
                     <li class="bold2">Dobór praktyczny</li>
                     <ol class="nonumbers">
                         <li class="next">Najmocniejszy lokalny kandydat po testach: Gemma 4 12B w Q4_K_M</li>
-                        <li class="next">Wierne przepisywanie i polskie pytania w chmurze: Qianfan-OCR</li>
+                        <li class="next">Polskie pytania semantyczne: Qianfan-OCR</li>
                         <li class="next">Analiza wizualna, klasyfikacja i pieczątki: <br />Gemma 4 albo Qwen3-VL-8B-Instruct</li>
                         <li class="next">Pismo odręczne: GLM-OCR</li>
-                    </ol>
-                </ol>
-            </div>
-        </div>
-    </section>
-        <section class="slide theme-dark tag-darkblue fullscreen">
-        <div class="layout-splitpoint">
-            <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/12.png" />
-            </div>
-            <div class="split-text">
-                <ol class="nonumbers">
-                    <li class="bold2">Dobór praktyczny</li>
-                    <ol class="nonumbers">
-                        <li class="next">LLaVA-PLLuM: ciekawy polski VLM, ale nie do użytku produkcyjnego</li>
                     </ol>
                 </ol>
             </div>
@@ -1148,7 +1134,7 @@
     <p><strong>Krok 2: Czy potrzebujemy tylko wiernie przepisać tekst?</strong></p>
   
     <p>Użyj klasycznego OCR albo lekkiego OCR-VLM.</p>
-    <p>Lokalnie najlepszy sygnał daje <strong>Gemma 4 12B w Q4_K_M</strong>, a w chmurze mocnym wyborem pozostaje <strong>Qianfan-OCR</strong>.</p>
+    <p>Lokalnie najlepszy sygnał ogólny daje <strong>Gemma 4 12B w Q4_K_M</strong>, a <strong>Qianfan-OCR</strong> pozostaje mocnym lokalnie testowanym wyborem do semantyki po polsku.</p>
     <p><strong>GutenOCR</strong> może służyć jedynie do testów niekomercyjnych, a <strong>GLM-OCR</strong> zostaje lekkim baseline i modelem do pisma odręcznego.</p>
   </div>
 </section>
@@ -1194,7 +1180,6 @@
     <p>Najpierw zastosuj wstępne przetwarzanie obrazu: korektę orientacji i przekrzywienia, poprawę kontrastu oraz odszumianie.</p>
     <p>Dopiero potem uruchom OCR lub VLM dobrany do właściwego zadania.</p>
     <p>Nie należy zakładać, że duży model sam naprawi rozmyty, przekrzywiony lub zabrudzony skan.</p>
-    <p><strong>Gemma 4</strong> nie zastępują osobnego etapu czyszczenia obrazu dla degraded OCR.</p>
   </div>
 </section>
 
@@ -1226,7 +1211,6 @@
     <br />
     <p>Wybieramy najprostszy potok przetwarzania, który poprawnie rozwiązuje konkretne zadanie.</p>
     <p>OCR służy przede wszystkim do odczytu tekstu. VLM jest potrzebny wtedy, gdy znaczenie zależy również od układu strony, obrazu albo położenia elementów.</p>
-    <p>Po aktualnych testach <strong>Gemma 4 w Q4_K_M</strong> jest najciekawszym lokalnym kandydatem</p>
   </div>
 </section>
 
