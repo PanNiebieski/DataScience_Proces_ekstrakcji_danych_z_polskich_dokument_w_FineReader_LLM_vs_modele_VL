@@ -251,11 +251,22 @@
             </div>
         </div>
     </section>
- 
+    <section class="slide layout-callout theme-dark">
+      <div class="callout-box" style="max-width:85%">
+        <p>Model <strong>Qwen3.6:35B-A3B</strong></p>
+        <p>Zapewne wygrywajacy, ale wymaga dużo VRAM</p>
+      </div>
+    </section>
+
     <section class="slide theme-black">
         <figure>
             <img class="cover" src="pictures/licencja.png" alt="screenshot" />
         </figure>
+    </section>
+            <section class="slide theme-dark tag-darkpurple  decor-corners2">
+        <span class="shout colors"><span>
+         Wyniki HunyuanOCR <br /> musiały zostać usunięte z prezentacji
+        </span></span>
     </section>
        <section class="slide theme-dark tag-darkpurple  decor-corners2">
         <span class="shout colors"><span>
@@ -467,9 +478,14 @@
            DeepSeek-OCR 2 jest trudny w konfiguracji
         </span></span>
     </section>
-    <section class="slide theme-black">
+    <section class="slide theme-black" style="background-color: whitesmoke;">
         <figure>
             <img class="cover" src="pictures/LLAVA.png" alt="screenshot" />
+        </figure>
+    </section>
+        <section class="slide theme-black" style="background-color: black;">
+        <figure>
+            <img class="cover" src="pictures/20260619_111002.jpg" alt="screenshot" />
         </figure>
     </section>
     <!-- //Tutaj tabeleka z modelami i ich cechami -->
@@ -1097,145 +1113,6 @@
                         <li class="next">Checkboxy rzeczywiste: modele wykrywają, że checkboxy istnieją, ale słabo przypisują etykiety i rozpoznają ich zaznaczenie.</li>
                         <li class="next">Mapy rzeczywiste: Qianfan-OCR, Gemma 4 i Qwen3-VL-8B dają najlepszy sygnał, ale nadal nie jest to stabilne.</li>
                         <li class="next">Dobre wyniki na danych syntetycznych nie przenoszą się automatycznie na prawdziwe dokumenty.</li>
-                    </ol>
-                </ol>
-            </div>
-        </div>
-    </section>
-    <section class="slide theme-dark tag-darkblue  decor-corners-glow">
-        <span class="shout colors"><span>
-           Czy to nadaje się na produkcję?
-        </span></span>
-    </section>
-<section class="slide layout-comparison-table theme-dark">
-
-
-  <table class="ct-table ct-table--wide">
-    <thead>
-      <tr>
-        <th style="width:210px">Przypadek</th>
-        <th style="width:130px">Czy produkcyjnie?</th>
-        <th style="width:170px">Najlepszy wybór</th>
-        <th>Warunek</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Czyste dokumenty drukowane / OCR</td>
-        <td><code class="dt-badge dt-badge--yellow">Tak, pilotażowo</code></td>
-        <td><code class="dt-badge dt-badge--green">Gemma 4 Q4_K_M</code></td>
-        <td>limit długości, retry, kontrola halucynacji</td>
-      </tr>
-      <tr>
-        <td>Klasyfikacja typu dokumentu</td>
-        <td><code class="dt-badge dt-badge--green">Tak</code></td>
-        <td><code class="dt-badge dt-badge--green">Gemma 4 / Qwen3-VL-8B</code></td>
-        <td>prosty JSON + walidacja</td>
-      </tr>
-      <tr>
-        <td>Pieczątki / stemple</td>
-        <td><code class="dt-badge dt-badge--yellow">Tak, jako wspomaganie</code></td>
-        <td><code class="dt-badge dt-badge--green">Gemma 4 / Qwen3-VL-8B</code></td>
-        <td>człowiek/fallback przy niepewności</td>
-      </tr>
-      <tr>
-        <td>Polskie pytania semantyczne</td>
-        <td><code class="dt-badge dt-badge--green">Tak</code></td>
-        <td><code class="dt-badge dt-badge--green">Qianfan-OCR</code></td>
-        <td>najlepiej po dobrym OCR albo z walidacją odpowiedzi</td>
-      </tr>
-      <tr>
-        <td>JSON / key-value</td>
-        <td><code class="dt-badge dt-badge--yellow">Tak, ale nie na ślepo</code></td>
-        <td><code class="dt-badge dt-badge--green">Qwen3-VL / Gemma / Qianfan</code></td>
-        <td>JSON Schema + retry + confidence</td>
-      </tr>
-      <tr>
-        <td>Tabele syntetyczne</td>
-        <td><code class="dt-badge dt-badge--green">Tak</code></td>
-        <td><code class="dt-badge dt-badge--green">Gemma 4</code></td>
-        <td>przy podobnych szablonach</td>
-      </tr>
-    </tbody>
-  </table>
-
-</section>
-<section class="slide layout-comparison-table theme-dark">
-
-
-  <table class="ct-table ct-table--wide">
-    <thead>
-      <tr>
-        <th style="width:210px">Przypadek</th>
-        <th style="width:130px">Czy produkcyjnie?</th>
-        <th style="width:170px">Najlepszy wybór</th>
-        <th>Warunek</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Tabele fakturowe</td>
-        <td><code class="dt-badge dt-badge--yellow">Ostrożnie</code></td>
-        <td><code class="dt-badge dt-badge--green">Gemma 4</code></td>
-        <td>raczej jako draft, nie final accounting</td>
-      </tr>
-      <tr>
-        <td>Checkboxy rzeczywiste</td>
-        <td><code class="dt-badge dt-badge--red">Nie jako samodzielny VLM</code></td>
-        <td>osobny detector + OCR etykiet</td>
-        <td>VLM tylko jako pomoc</td>
-      </tr>
-      <tr>
-        <td>Mapy rzeczywiste / bounding box</td>
-        <td><code class="dt-badge dt-badge--red">Nie</code></td>
-        <td>osobny detector/layout model</td>
-        <td>VLM za słaby i niestabilny</td>
-      </tr>
-      <tr>
-        <td>Pismo odręczne</td>
-        <td><code class="dt-badge dt-badge--yellow">Ostrożnie / osobno</code></td>
-        <td><code class="dt-badge dt-badge--yellow">GLM-OCR</code></td>
-        <td>tylko jeśli akceptujesz błędy</td>
-      </tr>
-      <tr>
-        <td>Uszkodzone skany</td>
-        <td><code class="dt-badge dt-badge--red">Nie bez preprocessingu</code></td>
-        <td>preprocessing + OCR</td>
-        <td>VLM nie naprawi skanu sam</td>
-      </tr>
-    </tbody>
-  </table>
-
-</section>
-    <section class="slide theme-dark tag-darkblue fullscreen">
-        <div class="layout-splitpoint">
-            <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/12.png" />
-            </div>
-            <div class="split-text">
-                <ol class="nonumbers">
-                    <li class="bold2">Reguły wdrożenia: najpierw prosty pipeline</li>
-                    <ol class="nonumbers">
-                        <li class="next">Jeśli PDF ma warstwę tekstową : nie używać VLM. Wyciągnąć tekst normalnie i dopiero potem LLM.</li>
-                        <li class="next">Jeśli dokument jest czysty obrazowo : Gemma 4 Q4_K_M wygląda bardzo dobrze jako lokalny kandydat do OCR/klasyfikacji/struktur.</li>
-                        <li class="next">Jeśli potrzebujesz rozumienia treści po polsku : Qianfan-OCR ma najlepszy wynik w Polish Understanding.</li>
-                    </ol>
-                </ol>
-            </div>
-        </div>
-    </section>
-    <section class="slide theme-dark tag-darkblue fullscreen">
-        <div class="layout-splitpoint">
-            <div class="split-image">
-                <img title="icon" src="pictures/iconsFr/12.png" />
-            </div>
-            <div class="split-text">
-                <ol class="nonumbers">
-                    <li class="bold2">Reguły wdrożenia: gdzie uważać</li>
-                    <ol class="nonumbers">
-                        <li class="next">Jeśli potrzebujesz decyzji wizualnej : Qwen3-VL-8B-Instruct albo Gemma 4.</li>
-                        <li class="next">Jeśli potrzebujesz JSON/KV : nie ufać surowemu wynikowi. Obowiązkowo: schema validation, retry, porównanie pól, log błędów.</li>
-                        <li class="next">Jeśli potrzebujesz checkboxów/map/bboxów w realnych dokumentach : nie robić tego samym VLM. Tu trzeba osobny detektor.</li>
                     </ol>
                 </ol>
             </div>
